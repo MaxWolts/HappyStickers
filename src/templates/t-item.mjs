@@ -1,4 +1,3 @@
-import { itemsCreate } from "../components/items.mjs"
 import {registerImage} from "../lazy.mjs"
 let saleStiker = `<svg width="64" class='sale-stiker' height="60" viewBox="0 0 64 60" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M32.1528 0L40.2423 6.54695L50.8721 5.72949L53.3316 15.5052L62.4413 20.7295L58.3312 30L62.4413 39.2705L53.3316 44.4948L50.8721 54.2705L40.2423 53.4531L32.1528 60L24.0632 53.4531L13.4334 54.2705L10.974 44.4948L1.86426 39.2705L5.97435 30L1.86426 20.7295L10.974 15.5052L13.4334 5.72949L24.0632 6.54695L32.1528 0Z" fill="#FF5F7E"/>

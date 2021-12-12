@@ -19,3 +19,12 @@ export const getStikerCategory = async (id) => {
         return error
     }
 }
+export const getStikerByName = async(name) => {
+    try {
+        const response = await fetch(`${link}/products/?name=${name}`)
+        const data = await response.json()
+        return data
+    } catch {
+        return error
+    }
+}

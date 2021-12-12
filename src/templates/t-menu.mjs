@@ -2,7 +2,7 @@ export const createTemplateMenu = () => {
     const menu = `
         <div class="search">
             <form class="search-form" action="">
-                <input type="text" placeholder="Busca tu stiker por su nombre"
+                <input type="text" name='name'  placeholder="Busca tu stiker por su nombre"
                 
                 />
                 <button type="reset" class="clean">X</button>

@@ -17,16 +17,8 @@ const searchItem = (id) => {
         categories: ['Sale', 'Otros']}
 }
 // 
-export const itemsCreate = (object) => {
-    let template = ''
-    console.log(Object.keys(object).length )
-    for(let i=0; i< object.total; i++) {
-        template += createItemTemplate(cositaSale)
-    }
-    return template
-    
-}
-export const thiIsPrube = (obj, nameCategory) => {
+
+export const createItems = (obj, nameCategory) => {
     let containerItems = document.createElement('div')
     containerItems.className = 'items'
     obj.forEach(element => {

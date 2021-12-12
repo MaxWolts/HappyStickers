@@ -131,6 +131,7 @@ export const controlLeftRightAnimations = () => {
     const controlAnimation = (button) => {
         if (button == 'menu') {
             if (cart == 1) {
+                cartIconAnimation()
                 cartAnimation()
                 cart = 0
             }
