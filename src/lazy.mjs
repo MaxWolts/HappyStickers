@@ -12,7 +12,7 @@ const loadImage = (intersectionEntry) => {
   imgNode.src = imgNode.dataset.src;
   imgNode.onload = () => {
     loadedImages += 1;
-    logState();
+    // logState();
   };
   observer.unobserve(imgNode);
 };
@@ -20,11 +20,11 @@ const loadImage = (intersectionEntry) => {
 export const registerImage = (image) => {
   observer.observe(image);
   totalImages += 1;
-  logState();
+  // logState();
 };
 
-function logState() {
-  console.log(`⚪️ Total Imágenes: ${totalImages}`);
-  console.log(`🟣 Imágenes cargadas: ${loadedImages}`);
-  console.log("--------------------------------------");
-}
+// function logState() {
+//   console.log(`⚪️ Total Imágenes: ${totalImages}`);
+//   console.log(`🟣 Imágenes cargadas: ${loadedImages}`);
+//   console.log("--------------------------------------");
+// }

@@ -17,14 +17,10 @@ export const createTemplateMenu = () => {
             <button class="account-button">Mi cuenta</button>
             <button class="cart-button">Carrito</button>
             <p>Categorías:</p>
-            <button class="category-button">Sale</button>
-            <button class="category-button">Nuevos</button>
-            <button class="category-button">Series</button>
-            <button class="category-button">Peliculas</button>
-            <button class="category-button">Anime</button>
-            <button class="category-button">Juegos</button>
-            <button class="category-button">Musica</button>
-            <button class="category-button">Otros</button>
+            <button class="category-button" data-categoryid="2">Anime</button>
+            <button class="category-button" data-categoryid="3">Juegos</button>
+            <button class="category-button" data-categoryid="5">Comics</button>
+            <button class="category-button" data-categoryid="4">Varios</button>
         </div>
     `
     return menu

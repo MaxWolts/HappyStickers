@@ -7,7 +7,7 @@ let saleStiker = `<svg width="64" class='sale-stiker' height="60" viewBox="0 0 6
 </svg>
 `
 
-export function createItemTemplate(object) {
+export function createItemTemplate(object, nameCategory) {
     let container = document.createElement('div')
     let imgContainer = document.createElement('div')
     let descriptionContainer = document.createElement('div')
@@ -25,31 +25,37 @@ export function createItemTemplate(object) {
     container.appendChild(imgContainer)
 
     descriptionContainer.className = 'item-description'
-    descriptionContainer.innerHTML = createDescription(object)
+    descriptionContainer.innerHTML = createDescription(object, nameCategory)
     container.appendChild(descriptionContainer)
     return container
 }
-function createDescription(object) {
+function createDescription(object, nameCategory) {
     let container = `
         <p class="name"> <strong>${object.name}</strong> </p>
         <div class="price"> 
-            <p>$${object.price}.00</p>
+            <p>$${object.price}</p>
         </div>
         
         <div class='form-item' id='f${object.id}'>
-        ${createDataItem(object)}
+        ${createDataItem(object, nameCategory)}
         </div>
         <button class="item-button" type="button" id='b${object.id}'>Detalles</button>
     `
     return container
 }
 
-export function createDataItem (object) {
+export function createDataItem (object, nameCategory) {
+    let category = ''
+    if(nameCategory) {
+        category = nameCategory
+    }else {
+        category += object.category.name
+    }
     const template = `
         <p class="description">${object.description}</p>
         <p class="size">Tamaño: 6x7cm</p>
         <p class="item-categories">Categorias:
-            ${object.category.name}
+            ${category}
         </p>
         <form class="add-to-cart" action="#">
             <p class="item-quantity">Cantidad:

@@ -26,11 +26,11 @@ export const itemsCreate = (object) => {
     return template
     
 }
-export const thiIsPrube = (obj) => {
+export const thiIsPrube = (obj, nameCategory) => {
     let containerItems = document.createElement('div')
     containerItems.className = 'items'
     obj.forEach(element => {
-        containerItems.appendChild (createItemTemplate(element))
+        containerItems.appendChild(createItemTemplate(element, nameCategory))
     });
     return containerItems
 }
@@ -63,11 +63,6 @@ function openItem(id, $container, $buttonItem, $item) {
     animationOpacity($buttonItem)
     animationItemheightDown($item)
     setTimeout(() => {
-        // if(!document.querySelector(`#c${id}`)) {
-        //     let obj = searchItem(id)
-        //     let itemDescription = createDataItem(obj)
-        //     $container.innerHTML = itemDescription
-        // }
         $buttonItem.style.display = 'none'
         animationOpacity($container)
         $container.style.display= 'block'

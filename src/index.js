@@ -12,22 +12,16 @@ insertTemplateMenu()
 import { insertTemplateCart } from './components/cart.mjs'
 insertTemplateCart()
 
-const link = 'https://happystiker.herokuapp.com/api/v1'
 
-const stikerData = async () => {
-    try {
-        const response = await fetch(`${link}/products`)
-        const data = await response.json()
-        return data
-    } catch (error) {
-        return error
-    }
-}
-const exito = (exito) => {
+import { getAllstikers } from './api-stikers.mjs'
+const loadStikers = (exito) => {
     let cosita = thiIsPrube(exito)
     $itemContainer.appendChild(cosita)
     listenerButton()
     // console.log(cosita)
 }
-stikerData().then(exito)
+getAllstikers().then(loadStikers)
+
+import { listenerButtonCategory } from './components/menu.mjs'
+listenerButtonCategory()
 
