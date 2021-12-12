@@ -57,6 +57,26 @@ const animationCart = () => {
     }
     return animationMenu
 }
+const animationCartIcon = () => {
+    let flag = 0
+    const animationMenu = () => {
+        if(flag == 0) {
+            gsap.to(`.cartIcon`, {
+                rotate: 360,
+                duration: 0.3
+            })
+            flag++
+        }else {
+            gsap.to(`.cartIcon`, {
+                rotate: 0,
+                duration: 0.3
+            })
+            flag--
+        }
+    }
+    return animationMenu
+}
+
 const animationLinesMenu = () => {
     let flag = 0
     const move = () => {
@@ -105,6 +125,7 @@ export const controlLeftRightAnimations = () => {
     const menuAnimation = animationMenu()
     const cartAnimation = animationCart()
     const linesAnimation = animationLinesMenu()
+    const cartIconAnimation = animationCartIcon()
     let menu = 0
     let cart = 0
     const controlAnimation = (button) => {
@@ -122,6 +143,7 @@ export const controlLeftRightAnimations = () => {
             }
         }
         if (button == 'cart') {
+            cartIconAnimation()
             if (menu == 1) {
                 menuAnimation()
                 linesAnimation()

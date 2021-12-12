@@ -1,11 +1,10 @@
 import {itemsCreate, listenerButton, thiIsPrube} from './components/items.mjs'
-const $itemContainer = document.querySelector('.items')
+const $itemContainer = document.querySelector('body')
 import { insertHeader } from './components/header.mjs'
 insertHeader()
 
 // $itemContainer.innerHTML = itemsCreate({total:5})
 // listenerButton()
-
 
 import { insertTemplateMenu } from './components/menu.mjs'
 insertTemplateMenu()
@@ -26,7 +25,7 @@ const stikerData = async () => {
 }
 const exito = (exito) => {
     let cosita = thiIsPrube(exito)
-    $itemContainer.innerHTML = cosita
+    $itemContainer.appendChild(cosita)
     listenerButton()
     // console.log(cosita)
 }

@@ -1,4 +1,4 @@
-import {createItemTemplate, createDataItem} from '../templates/t-item.mjs'
+import {createItemTemplate, createDataItem } from '../templates/t-item.mjs'
 import { animationOpacity, animationItemheightDown, animationItemheightUp } from '../animations.mjs'
 // temporales hasta crear la api
 const cositaSale = {
@@ -24,13 +24,15 @@ export const itemsCreate = (object) => {
         template += createItemTemplate(cositaSale)
     }
     return template
+    
 }
 export const thiIsPrube = (obj) => {
-    let template = ''
+    let containerItems = document.createElement('div')
+    containerItems.className = 'items'
     obj.forEach(element => {
-        template += createItemTemplate(element)
+        containerItems.appendChild (createItemTemplate(element))
     });
-    return template
+    return containerItems
 }
 
 export const listenerButton = () => {
