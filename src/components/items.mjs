@@ -4,7 +4,7 @@ import { animationOpacity, animationItemheightDown, animationItemheightUp } from
 const cositaSale = {
     id: 12,
     name:'Pikachu',
-    sale: false,
+    sale: true,
     price: "5,00",
     salePrice: '4,00',
     url: '/src/assets/pikachu.png'
@@ -14,14 +14,22 @@ const searchItem = (id) => {
         id: id,
         size: '12x14',
         description: '¡Encuentra un hogar para tu stiker favorito! Todos nuestros stikers son de gran calidad, muy durareros y resistentes al agua.',
-        labels: ['Sale', 'Otros']}
+        categories: ['Sale', 'Otros']}
 }
 // 
 export const itemsCreate = (object) => {
     let template = ''
+    console.log(Object.keys(object).length )
     for(let i=0; i< object.total; i++) {
         template += createItemTemplate(cositaSale)
     }
+    return template
+}
+export const thiIsPrube = (obj) => {
+    let template = ''
+    obj.forEach(element => {
+        template += createItemTemplate(element)
+    });
     return template
 }
 
@@ -36,8 +44,8 @@ export const listenerButton = () => {
 }
 function itemIteraction (id, elementTarget) {
     if(elementTarget.id == `b${id}` || elementTarget.id == `c${id}`) {
-        const $container = document.querySelector('.form-item')
-        const $buttonItem = document.querySelector('.item-button')
+        const $container = document.querySelector(`#f${id}`)
+        const $buttonItem = document.querySelector(`#b${id}`)
         const $item = document.querySelector(`#i${id}`)
         if(elementTarget.className.includes('item-button')) {
             openItem(id, $container, $buttonItem, $item)
@@ -53,11 +61,11 @@ function openItem(id, $container, $buttonItem, $item) {
     animationOpacity($buttonItem)
     animationItemheightDown($item)
     setTimeout(() => {
-        if(!document.querySelector(`#c${id}`)) {
-            let obj = searchItem(id)
-            let itemDescription = createDataItem(obj)
-            $container.innerHTML = itemDescription
-        }
+        // if(!document.querySelector(`#c${id}`)) {
+        //     let obj = searchItem(id)
+        //     let itemDescription = createDataItem(obj)
+        //     $container.innerHTML = itemDescription
+        // }
         $buttonItem.style.display = 'none'
         animationOpacity($container)
         $container.style.display= 'block'

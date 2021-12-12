@@ -18,18 +18,19 @@ export function createItemTemplate (object) {
         <div class="item-imgContainer">
             ${stiker}
             <figure>
-                <img src="${object.url}" alt="" class="imgStiker"/>
+                <img data-src="${object.image}" alt="" class="imgStiker"/>
             </figure>
         </div>
         <div class="item-description">
-            <div class="text-description">
-                <p class="name"> <strong>${object.name}</strong> </p>
-                <div class="price">
-                    <p class="${throwLine}">$${object.price}</p>
-                    ${sale}
-                </div>
+            <p class="name"> <strong>${object.name}</strong> </p>
+            <div class="price"> 
+                <p class="${throwLine}">$${object.price}.00</p>
+                ${sale}
             </div>
-            <div class='form-item' id='f${object.id}'></div>
+            
+            <div class='form-item' id='f${object.id}'>
+            ${createDataItem(object)}
+            </div>
             <button class="item-button" type="button" id='b${object.id}'>Detalles</button>
         </div>
     </div>`
@@ -37,18 +38,11 @@ export function createItemTemplate (object) {
 }
 
 export function createDataItem (object) {
-    let labels = '';
-    object.labels.forEach(element => {
-        if(labels !== ''){
-            labels += ', '
-        }
-        labels += `<a href="#" class="labels">${element}</a>`
-    });
     const template = `
         <p class="description">${object.description}</p>
-        <p class="size">Tamaño: ${object.size}</p>
-        <p class="item-labels">Etiquetas:
-            ${labels}
+        <p class="size">Tamaño: 6x7cm</p>
+        <p class="item-categories">Categorias:
+            ${object.category.name}
         </p>
         <form class="add-to-cart" action="#">
             <p class="item-quantity">Cantidad:

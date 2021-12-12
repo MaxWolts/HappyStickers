@@ -1,0 +1,84 @@
+.menu {
+    z-index: 1;
+    position: fixed;
+    top: 6.6rem;
+    left: -100vw;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    padding: 4rem 1rem 30vh 1rem;
+    background-color: var(--white);
+    overflow-y:auto;
+    border-right: 3px solid var(--blue-black);
+}
+.search:focus-within {
+    outline: 0.3rem solid var(--primary);
+    border-radius: 2.4rem;
+}
+.search-form {
+    height: 4.3rem;
+    display: grid;
+    grid-template-columns: 1fr 2.3rem 4.3rem;
+    width: 29rem;
+    background-color: var(--white);
+    border-radius: 2.4rem;
+    border: var(--blue-black);
+    box-shadow: 0px 3px 5px 2px var(--gray);
+}
+.search-form input {
+    width: auto;
+    border-top-left-radius: 2.4rem;
+    border-bottom-left-radius: 2.4rem;
+    padding: 0 0 0 2rem;
+    outline: none;
+    background-color: var(--white);
+    border: none;
+}
+.search-form input:focus-visible {
+    border: none;
+}
+.search-form .clean {
+    width: 2.3rem;
+    font-size: 1.8rem;
+    background: var(--white);
+    border: none;
+}
+.search-form .search {
+    width: 4.3rem;
+    border: none;
+    background-color: var(--blue-black);
+    border-radius: 50%;
+}
+.buttons-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.4rem;
+    width: 29rem;
+}
+.buttons-menu button {
+    border: 1px solid var(--blue-black)
+}
+.buttons-menu button:active {
+    color: var(--white);
+    border: 2px solid var(--primary-h);
+    background-color: var(--blue-black);
+}
+.buttons-menu p {
+    padding: 1rem 0;
+    font-size: 1.8rem;
+}
+.account-button, .cart-button, .category-button {
+    width: 29rem;
+    height: 4.3rem;
+    font-size: 1.8rem;
+    border-radius: 5px;
+}
+.account-button, .cart-button {
+    background-color: var(--primary);
+}
+.category-button {
+    background-color: var(--white);
+}

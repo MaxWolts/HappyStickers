@@ -1,0 +1,27 @@
+.header {
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6.6rem;
+    background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 76%);
+}
+.header-hero-name {
+    font-size: 2.5rem;
+    color: var(--white);
+}
+.header-menu {
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: var(--blue-black);
+    border: none;
+}
+.header-cart {
+    height: 6rem;
+    width: 6rem;
+    background: none;
+    border: none;
+}
