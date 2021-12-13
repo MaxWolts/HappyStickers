@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/login.css">
+    <link rel="stylesheet" href="/src/style/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -12,18 +14,22 @@
         <p class="login-title">Login</p>
         <form class="login-box">
             <div class="input-box user">
-                <p>Usuario</p>
-                <input type="text">
+                <p>Correo</p>
+                <input type="text" placeholder="Escribe tu nombre de correo" name="email">
             </div>
             <div class="input-box password">
                 <p>Contraceña</p>
-                <input type="password">
+                <input type="password" placeholder="Escribe tu contraceña" name="password">
             </div>
+            <a href="" class="remind-password">
+                ¿Olvidaste tu contraceña?
+            </a>
+            <button class="login-button">Login</button>
         </form>
-        <a href="" class="remind-password">
-            ¿Olvidaste tu contraceña?
+        <a href="" class="create-account">
+            Crear una cuenta
         </a>
-        <button class="login-button">Login</button>
     </section>
+    <script src="./src/components/login.mjs" type="module"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ import { insertTemplateCart } from './components/cart.mjs'
 insertTemplateCart()
 
 
-import { getAllstikers } from './api-stikers.mjs'
+import { getAllstikers, login } from './api-stikers.mjs'
 const loadStikers = (exito) => {
     let cosita = createItems(exito)
     $itemContainer.appendChild(cosita)
@@ -23,3 +23,9 @@ import { listenerButtonCategory, listenerSearchByName } from './components/menu.
 listenerButtonCategory()
 listenerSearchByName()
 
+/* ------------ */
+
+// function c (element) {
+//     console.log(element)
+// }
+// login().then(c)

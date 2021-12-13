@@ -1,0 +1,73 @@
+*{
+
+}
+body {
+    display: grid;
+    justify-items: center;
+    height: 100vh;
+    background: rgb(255,171,76);
+    background: linear-gradient(0deg, rgba(255,171,76,1) 0%, rgba(255,95,126,1) 76%);
+}
+.hero-title {
+    font-size: 3rem;
+    color: var(--white);
+}
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    font-weight: bold;
+}
+.login-title {
+    font-size: 3rem;
+    color: var(--white);
+}
+.login-box {
+    display: grid;
+    align-content: space-evenly;
+    height: 33.5rem;
+    width: 29rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    font-size: 1.8rem;
+}
+.input-box {
+    display: grid;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+.input-box input {
+    width: 100%;
+    font-size: 1.8rem;
+    border: none;
+    border-bottom: 0.2rem solid var(--blue-black) ;
+}
+.login-button {
+    justify-self: center;
+    width: 175px;
+    height: 45px;
+    border-radius: 10px;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    letter-spacing: var(--letter-spacing);
+    border: 3px solid var(--primary);
+    color: var(--white);
+    font-weight: bold;
+    background-color: var(--primary-h);
+}
+.login-button:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+}
+.remind-password {
+    text-align: right;
+    padding: 0 2rem;
+    font-size: 1.4rem;
+    color: var(--primary-h);
+}
+.create-account {
+    font-size: 2rem;
+    color: var(--blue-black);
+    font-weight: bold;
+}

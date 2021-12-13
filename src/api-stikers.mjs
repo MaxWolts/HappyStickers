@@ -28,3 +28,19 @@ export const getStikerByName = async(name) => {
         return error
     }
 }
+export const login = async(obj) => {
+    let url = 'https://happystiker.herokuapp.com/api/v1/auth/login'
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(obj),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await response.json()
+        return data
+    } catch {
+        return err
+    }
+}
