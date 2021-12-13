@@ -1,22 +1,6 @@
 import {createItemTemplate, createDataItem } from '../templates/t-item.mjs'
 import { animationOpacity, animationItemheightDown, animationItemheightUp } from '../animations.mjs'
-// temporales hasta crear la api
-const cositaSale = {
-    id: 12,
-    name:'Pikachu',
-    sale: true,
-    price: "5,00",
-    salePrice: '4,00',
-    url: '/src/assets/pikachu.png'
-}
-const searchItem = (id) => {
-    return {
-        id: id,
-        size: '12x14',
-        description: '¡Encuentra un hogar para tu stiker favorito! Todos nuestros stikers son de gran calidad, muy durareros y resistentes al agua.',
-        categories: ['Sale', 'Otros']}
-}
-// 
+import { addItemsToCart } from './cart.mjs'
 
 export const createItems = (obj, nameCategory) => {
     let containerItems = document.createElement('div')
@@ -35,6 +19,7 @@ export const listenerButton = () => {
             itemIteraction(id, elementTarget)
         }
     })
+    formEvent()
 }
 function itemIteraction (id, elementTarget) {
     if(elementTarget.id == `b${id}` || elementTarget.id == `c${id}`) {
@@ -73,4 +58,21 @@ function closedItem(elementTarget, $container, $buttonItem, $item) {
         animationItemheightUp($item)
     }, 400);
     $buttonItem.disabled = false
+}
+
+function formEvent() {
+    document.body.addEventListener('submit', (event) => {
+        event.preventDefault()
+        const target = event.target
+        if(target.className.includes('item-description')) {
+            let data = new FormData(target)
+            let objInfoItem = {
+                id: target.dataset.id,
+                name: target.dataset.name,
+                price: target.dataset.price,
+                quantity: data.get('quantity')
+            }
+            addItemsToCart(objInfoItem)
+        }
+    })
 }

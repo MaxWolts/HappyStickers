@@ -45,9 +45,9 @@
 }
 .item-button{
     opacity: 1;
-    width: 175px;
-    height: 45px;
-    border-radius: 10px;
+    width: 17.5rem;
+    height: 4.5rem;
+    border-radius: 1rem;
     font-family: var(--font-primary);
     font-size: 2rem;
     letter-spacing: var(--letter-spacing);
@@ -112,7 +112,7 @@
 .add-button:hover {
     background-color: var(--primary);
 }
-.add-to-cart .closed-button {
+.closed-button {
     border: 3px solid var(--gray);
     background-color: var(--blue-black);
 }

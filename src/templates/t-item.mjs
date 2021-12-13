@@ -9,7 +9,10 @@ let saleStiker = `<svg width="64" class='sale-stiker' height="60" viewBox="0 0 6
 export function createItemTemplate(object, nameCategory) {
     let container = document.createElement('div')
     let imgContainer = document.createElement('div')
-    let descriptionContainer = document.createElement('div')
+    let descriptionContainer = document.createElement('form')
+    descriptionContainer.dataset.name = `${object.name}`
+    descriptionContainer.dataset.price = `${object.price}`
+    descriptionContainer.dataset.id = `${object.id}`
     container.className = 'item'
     container.id= `i${object.id}`
 
@@ -30,9 +33,9 @@ export function createItemTemplate(object, nameCategory) {
 }
 function createDescription(object, nameCategory) {
     let container = `
-        <p class="name"> <strong>${object.name}</strong> </p>
+        <p class="name" name="name"> <strong>${object.name}</strong> </p>
         <div class="price"> 
-            <p>$${object.price}</p>
+            <p name="price">$${object.price}</p>
         </div>
         
         <div class='form-item' id='f${object.id}'>
@@ -56,14 +59,14 @@ export function createDataItem (object, nameCategory) {
         <p class="item-categories">Categorias:
             ${category}
         </p>
-        <form class="add-to-cart" action="#">
+        <div class="add-to-cart" action="#">
             <p class="item-quantity">Cantidad:
-                <input type="number" name="numero" value="1" min="1" max="50" required pattern="[0-9]{5}" />
+                <input name="quantity" type="number" name="numero" value="1" min="1" max="50" required pattern="[0-9]{5}" />
             </p>
             <div class="add-to-cart-buttons">
                 <button class='add-button' type="submit">Añadir al carrito</button>
                 <button class='closed-button' type="button" id='c${object.id}'>Cerrar</button>
             </div>
-        </form>`
+        </div>`
     return template
 }

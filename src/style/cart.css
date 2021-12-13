@@ -32,9 +32,15 @@
     box-shadow: 0px 3px 5px 2px var(--gray);
     border-radius: 0.5rem;
 }
-.article-button {
+.article-delete-button {
+    font-weight: bold;
     background: none;
     border: none;
+}
+.article-delete-button:hover {
+    cursor: pointer;
+    transform: scale(1.5);
+    color: var(--primary-h);
 }
 .cart-articles-total {
     display: flex;
@@ -50,19 +56,26 @@
 }
 .cart-buttons button{
     align-self: center;
-    height: 45px;
+    height: 4.5rem;
     width: fit-content;
     padding: 0 2rem;
     font-size:1.82rem;
-    border-radius: 10px;
+    border-radius: 1rem;
     letter-spacing: var(--letter-spacing);
     color: var(--white);
     font-weight: bold;
     border: none;
 }
 .end-button {
+    background-color: var(--primary-h);
+}
+.end-button:hover {
+    cursor: pointer;
     background-color: var(--primary);
 }
 .return-button {
     background-color: var(--blue-black);
+}
+.return-button:hover {
+    background-color: var(--gray);
 }
