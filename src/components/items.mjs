@@ -3,12 +3,25 @@ import { animationOpacity, animationItemheightDown, animationItemheightUp } from
 import { addItemsToCart } from './cart.mjs'
 
 export const createItems = (obj, nameCategory) => {
+    let flag = 0
+    let container = document.createElement('div')
+    container.className = 'items'
     let containerItems = document.createElement('div')
-    containerItems.className = 'items'
+    containerItems.className = 'sub-items'
     obj.forEach(element => {
-        containerItems.appendChild(createItemTemplate(element, nameCategory))
-    });
-    return containerItems
+        if(flag < 2) {
+            containerItems.appendChild(createItemTemplate(element, nameCategory))
+            flag++
+        }else {
+            container.appendChild(containerItems)
+            containerItems = document.createElement('div')
+            containerItems.className = 'sub-items'
+            containerItems.appendChild(createItemTemplate(element, nameCategory))
+            flag = 1
+        }
+    })
+    container.appendChild(containerItems)
+    return container
 }
 
 export const listenerButton = () => {

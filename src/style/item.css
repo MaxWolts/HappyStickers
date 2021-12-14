@@ -8,7 +8,7 @@
 }
 .item {
     width: 280px;
-    min-height: 340px;
+    min-height: 360px;
     height: fit-content;
     border-radius: 10px;
     overflow: hidden;
@@ -121,4 +121,9 @@
 }
 .item-quantity input{
     font-size: 1.8rem;
+}
+.sub-items {
+    gap: 2rem;
+    display: flex;
+    flex-direction: column;
 }
