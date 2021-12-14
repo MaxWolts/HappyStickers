@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/payment.css">
+    <title>payment</title>
+</head>
+<body>
+    <header class="header">HappyStikers</header>
+    <div class="details">
+        <h2>Detalles de factuación y envio</h2>
+        <div class="your-cart"></div>
+        <form action="" class="payment-form">
+            <div>
+                <p>Nombre</p>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <p>Apellido</p>
+                <input type="text" name="lastName">
+            </div>
+            <div>
+                <p>Correo</p>
+                <input type="number" name="email">
+            </div>
+            <div>
+                <p>Pais</p>
+                <input type="text" name="country">
+            </div>
+            <div>
+                <p>Código postal</p>
+                <input type="number" name="postalCode">
+            </div>
+            <div>
+                <p>Ciudad / localidad</p>
+                <input type="text" name="city">
+            </div>
+            <div>
+                <p>Calle</p>
+                <input type="text" name="street">
+            </div>
+            <div>
+                <p>Telefono</p>
+                <input type="number" name="phone">
+            </div>
+            <button class="payment-form-button">Realizar pedido</button>
+        </form>
+    </div>
+</body>
+<script src="./src/components/payment.mjs" type="module"></script>
+</html>

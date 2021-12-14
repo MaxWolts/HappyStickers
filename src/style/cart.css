@@ -27,10 +27,15 @@
     grid-template-columns: 1fr 4rem 8rem 5rem;
     align-items: center;
     height: 6.9rem;
-    width: 34.5rem;
+    min-width: 29rem;
     padding: 0 2rem;
     box-shadow: 0px 3px 5px 2px var(--gray);
     border-radius: 0.5rem;
+}
+.article-quantity {
+    text-align: center;
+    font-weight: bold;
+    color: var(--blue-black);
 }
 .article-delete-button {
     font-weight: bold;
@@ -41,6 +46,9 @@
     cursor: pointer;
     transform: scale(1.5);
     color: var(--primary-h);
+}
+.article-price {
+    text-align: right;
 }
 .cart-articles-total {
     display: flex;

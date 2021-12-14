@@ -26,6 +26,7 @@ export const createTemplateCart = () => {
     totalText.innerText= 'Total'
     articleTotal.appendChild(totalText)
     let totalPrice = document.createElement('p')
+    totalPrice.className = 'articles-total-price'
     totalPrice.innerText= '$0'
     articleTotal.appendChild(totalPrice)
     content.appendChild(articleTotal)
@@ -49,6 +50,8 @@ export const createCartItem = (objInfo) => {
     let item = document.createElement('div')
     item.className= 'article'
     item.dataset.id = objInfo.id
+    item.dataset.price = objInfo.price * objInfo.quantity
+    item.dataset.quantity = objInfo.quantity
     let name = document.createElement('p')
     name.className= 'article-name'
     name.innerText= objInfo.name
@@ -61,7 +64,7 @@ export const createCartItem = (objInfo) => {
 
     let price = document.createElement('p')
     price.className = 'article-price'
-    price.innerText = `$${objInfo.price}`
+    price.innerText = `$${objInfo.price * objInfo.quantity}`
     item.appendChild(price)
 
     let deleteButton = document.createElement('button')
