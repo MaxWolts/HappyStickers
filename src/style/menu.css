@@ -51,7 +51,9 @@
     border: none;
     background-color: var(--blue-black);
     border-radius: 50%;
+    cursor: pointer;
 }
+
 .buttons-menu {
     display: flex;
     flex-direction: column;
@@ -59,8 +61,10 @@
     width: 29rem;
 }
 .buttons-menu button {
-    border: 1px solid var(--blue-black)
+    border: 1px solid var(--blue-black);
+    cursor: pointer;
 }
+
 .buttons-menu button:active {
     color: var(--white);
     border: 2px solid var(--primary-h);

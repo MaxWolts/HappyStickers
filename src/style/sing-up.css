@@ -1,0 +1,27 @@
+.sing-up {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    font-weight: bold;
+}
+.sing-up-title {
+    font-size: 3rem;
+    color: var(--white);
+}
+.sing-up-form{
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 0;
+    width: 29rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    font-size: 1.8rem;
+}
+input {
+    height: 3rem;
+    background-color: var(--gray-m);
+}
+input::placeholder {
+    color: var(--gray)
+}

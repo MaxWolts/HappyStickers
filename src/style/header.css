@@ -12,19 +12,13 @@
     font-size: 2.5rem;
     color: var(--white);
 }
-.header-menu {
+.header-cart, .header-menu {
     height: 6rem;
     width: 6rem;
     border-radius: 50%;
     background-color: var(--blue-black);
     border: none;
-}
-.header-cart {
-    height: 6rem;
-    width: 6rem;
-    border-radius: 50%;
-    background-color: var(--blue-black);
-    border: none;
+    cursor: pointer;
 }
 .cartIcon {
     height: 3.5rem;
