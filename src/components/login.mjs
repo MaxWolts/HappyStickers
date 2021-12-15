@@ -11,7 +11,11 @@ $form.addEventListener('submit', (event) => {
     login(obj).then((res)=> {
         if(res) {
             document.cookie = `token=${res.token}`
-            window.location.href = "http://172.31.34.219:5500/index.html";
+            if (!localStorage.getItem('infoCart')) {
+                window.location.href = "http://172.19.199.247:5500/index.html";
+            } else {
+                window.location.href = "http://172.19.199.247:5500/payment.html";
+            }
         }
     })
 })

@@ -50,6 +50,7 @@ export const createCartItem = (objInfo) => {
     let item = document.createElement('div')
     item.className= 'article'
     item.dataset.id = objInfo.id
+    item.dataset.name = objInfo.name
     item.dataset.price = objInfo.price * objInfo.quantity
     item.dataset.quantity = objInfo.quantity
     let name = document.createElement('p')

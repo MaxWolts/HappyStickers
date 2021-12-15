@@ -9,7 +9,7 @@ export const createItems = (obj, nameCategory) => {
     let containerItems = document.createElement('div')
     containerItems.className = 'sub-items'
     obj.forEach(element => {
-        if(flag < 2) {
+        if(flag < 3) {
             containerItems.appendChild(createItemTemplate(element, nameCategory))
             flag++
         }else {

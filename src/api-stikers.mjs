@@ -40,7 +40,7 @@ export const login = async(obj) => {
         })
         const data = await response.json()
         return data
-    } catch {
+    } catch (err) {
         return err
     }
 }

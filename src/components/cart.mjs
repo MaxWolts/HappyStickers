@@ -4,6 +4,8 @@ export const insertTemplateCart = () => {
     const $body = document.querySelector('body')
     $body.appendChild(createTemplateCart())
     listenerButtons()
+    loadItemsOfStorage()
+    
 }
 
 export const addItemsToCart = (objInfo) => {
@@ -14,7 +16,8 @@ export const addItemsToCart = (objInfo) => {
     }
     $cartItems.appendChild(createCartItem(objInfo))
     actualiceTotalPrice()
-    
+    saveInfoCart()
+    enableButtonCart()
 }
 const listenerButtons = () => {
     document.body.addEventListener('click', (event) => {
@@ -29,8 +32,13 @@ const listenerButtons = () => {
                 buttonCart.click()
             }
             if (elementTarget.className === 'end-button') {
-                let items = document.querySelectorAll('.article')
-                saveInfoCart(items)
+                
+                saveInfoCart()
+                if (!document.cookie) {
+                    window.location.href = "http://172.19.199.247:5500/login.html"
+                } else {
+                    window.location.href = "http://172.19.199.247:5500/payment.html"
+                }
             }
         }
     })
@@ -39,22 +47,33 @@ const deleteItem = (elementTarget) => {
     elementTarget.parentNode.remove()
     let $cartItems = document.querySelector('.cart-articles')
     if($cartItems.children.length == 0){
+        disableButtonCart()
         let $flag = document.querySelector('.cart-flag')
         $flag.style.display = 'block'
     }
+    saveInfoCart()
 }
-function saveInfoCart (node) {
+function saveInfoCart() {
+    let node = document.querySelectorAll('.article')
     let ids = []
+    let names = []
+    let quantities= []
+    let prices = []
     Object(node).forEach(element => {
         ids.push(element.dataset.id)
+        names.push (element.dataset.name)
+        quantities.push (element.dataset.quantity)
+        prices.push (element.dataset.price)
     });
     let infoCart = {
         id: ids,
+        names:names,
+        quantities: quantities,
+        prices: prices,
         quantity: calaculateQuantity(node),
         price: calculateTotal(node)
     }
     localStorage.setItem("infoCart", JSON.stringify(infoCart))
-    window.location.href = "http://172.19.199.247:5500/payment.html";
 }
 function actualiceTotalPrice () {
     let priceTotalText = document.querySelector('.articles-total-price')
@@ -75,4 +94,41 @@ function calaculateQuantity (node) {
         total += parseInt(element.dataset.quantity)
     });
     return total
+}
+function disableButtonCart() {
+    let button = document.querySelector('.end-button')
+    button.disabled = true
+    button.style.display = 'none'
+}
+function enableButtonCart() {
+    let button = document.querySelector('.end-button')
+    button.disabled = false
+    button.style.display = 'block'
+}
+
+function loadItemsOfStorage() {
+    let items = JSON.parse(localStorage.getItem('infoCart'))
+    if(items) {
+        let names = items.names
+        let ids = items.id
+        let prices = items.prices
+        let quantities = items.quantities
+        let price = 0
+        for (let i = 0; i < ids.length; i++) {
+            if (quantities[i]>1) {
+                price = (`${parseInt(prices[i])/parseInt(quantities[i])}`)
+            }else {
+                price = prices[i]
+            }
+            addItemsToCart({
+                id: ids[i],
+                name: names[i],
+                price: price,
+                quantity: quantities[i]
+            })
+        }
+        enableButtonCart()
+    }else {
+        disableButtonCart()
+    }
 }
