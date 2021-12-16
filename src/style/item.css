@@ -114,9 +114,11 @@
     border: 3px solid var(--primary);
     background-color: var(--primary-h);
 }
+
 .add-button:hover {
     background-color: var(--primary);
 }
+
 .closed-button {
     border: 3px solid var(--gray);
     background-color: var(--blue-black);

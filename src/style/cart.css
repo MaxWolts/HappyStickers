@@ -20,7 +20,7 @@
     grid-gap: 2.5rem;
 }
 .cart-title {
-    color: var(--primary);
+    color: var(--primary-h);
 }
 .article {
     display: grid;
@@ -70,12 +70,13 @@
     font-size:1.82rem;
     border-radius: 1rem;
     letter-spacing: var(--letter-spacing);
-    color: var(--white);
+    /* color: var(--white); */
     font-weight: bold;
     border: none;
 }
 .end-button {
     background-color: var(--primary-h);
+    color: var(--blue-black-h);
 }
 .end-button:hover {
     cursor: pointer;
@@ -83,6 +84,7 @@
 }
 .return-button {
     background-color: var(--blue-black);
+    color: var(--white);
 }
 .return-button:hover {
     background-color: var(--gray);

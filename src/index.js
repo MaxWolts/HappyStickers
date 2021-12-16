@@ -12,10 +12,9 @@ insertTemplateCart()
 
 
 import { getStikers, login, createOrder, addItemsToOrder } from './api-stikers.mjs'
-import { lazyItems } from '../src/lazy.mjs'
+
 const loadStikers = async (exito) => {
     await createItems(exito, $itemContainer)
-    // lazyItems(exito)
 }
 getStikers().then(loadStikers)
 

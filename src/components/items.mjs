@@ -1,5 +1,5 @@
 import {createItemTemplate, createDataItem } from '../templates/t-item.mjs'
-import { animationOpacity, animationItemheightDown, animationItemheightUp } from '../animations.mjs'
+import { animationOpacity, animationItemheightDown, animationItemheightUp, animationAddItem } from '../animations.mjs'
 import { addItemsToCart } from './cart.mjs'
 import { lazyItems } from '../lazy.mjs'
 
@@ -22,18 +22,19 @@ export const createItems = (obj, container, nameCategory) => {
     container.appendChild(containerItems)
     listenerButton()
     lazyItems(obj, nameCategory)
+    formEvent()
 }
 function listenerButton() {
     document.body.addEventListener('click', async (event) => {
         const elementTarget = event.target
         if (elementTarget.tagName == 'BUTTON') {
             const id = elementTarget.id.slice(1)
-            itemIteraction(id, elementTarget)
+            itemInteraction(id, elementTarget)
+            addAnimationAddItem(elementTarget)
         }
     })
-    formEvent()
 }
-function itemIteraction (id, elementTarget) {
+function itemInteraction (id, elementTarget) {
     if(elementTarget.id == `b${id}` || elementTarget.id == `c${id}`) {
         const $container = document.querySelector(`#f${id}`)
         const $buttonItem = document.querySelector(`#b${id}`)
@@ -45,6 +46,7 @@ function itemIteraction (id, elementTarget) {
             closedItem(elementTarget, $container, $buttonItem, $item)
         }
     }
+    
 }
 function openItem(id, $container, $buttonItem, $item) {
     $buttonItem.disabled = true
@@ -90,5 +92,19 @@ function formEvent() {
 export const removeAllItems = (container) => {
     while(container.firstElementChild){
         container.firstElementChild.remove()
+    }
+}
+
+function addAnimationAddItem(button) {
+    if (button.className == 'add-button') {
+        let animation = animationAddItem(`#${button.id}`)
+        setTimeout(() => {
+            button.disabled = true
+            animation.play()
+        }, 0);
+        setTimeout(async () => {
+            await animation.reverse()
+            button.disabled = false
+        }, 1300);
     }
 }

@@ -161,3 +161,14 @@ export const controlLeftRightAnimations = () => {
     return controlAnimation
 
 }
+
+export const animationAddItem = (className) => {
+    let animation = gsap.to(`${className}`, {
+        text: 'Añadido!',
+        backgroundColor: 'white',
+        color: 'black',
+        duration: 0.5,
+        ease:Linear.easeNone, paused:true, reversed:true
+    })
+    return animation
+}
