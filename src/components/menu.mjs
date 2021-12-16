@@ -1,6 +1,6 @@
 import { createTemplateMenu } from '../templates/t-menu.mjs'
 import { getStikerCategory, getStikerByName } from '../api-stikers.mjs'
-import { createItems } from '../components/items.mjs'
+import { createItems, removeAllItems } from '../components/items.mjs'
 export const insertTemplateMenu = () => {
     const $menu = document.querySelector('.menu')
     $menu.innerHTML = createTemplateMenu()
@@ -19,10 +19,9 @@ export const listenerButtonCategory = () => {
 }
 function actionCategory (id) {
     getStikerCategory(id).then((res) => {
-        document.querySelector('.items').remove()
-        let items = createItems(res.products, res.name)
-        let $body = document.querySelector('body')
-        $body.appendChild(items)
+        let $itemsContainer = document.querySelector('.items')
+        removeAllItems($itemsContainer)
+        createItems(res.products, $itemsContainer, res.name)
         let menu = document.querySelector('.header-menu')
         menu.click()
     })
@@ -35,11 +34,10 @@ export function listenerSearchByName () {
         let name = data.get('name')
         if (name !== '') {
             getStikerByName(name).then((res) => {
-                let $body = document.querySelector('body')
                 if (Object.keys(res).length > 0){
-                    document.querySelector('.items').remove()
-                    let items = createItems(res, res.name)
-                    $body.appendChild(items)
+                    let $itemsContainer = document.querySelector('.items')
+                    removeAllItems($itemsContainer)
+                    createItems(res, $itemsContainer, res.name)
                     let menu = document.querySelector('.header-menu')
                     menu.click()
                 }else {

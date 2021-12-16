@@ -2,10 +2,8 @@ import {createItemTemplate, createDataItem } from '../templates/t-item.mjs'
 import { animationOpacity, animationItemheightDown, animationItemheightUp } from '../animations.mjs'
 import { addItemsToCart } from './cart.mjs'
 
-export const createItems = (obj, nameCategory) => {
+export const createItems = (obj, container, nameCategory) => {
     let flag = 0
-    let container = document.createElement('div')
-    container.className = 'items'
     let containerItems = document.createElement('div')
     containerItems.className = 'sub-items'
     obj.forEach(element => {
@@ -21,10 +19,9 @@ export const createItems = (obj, nameCategory) => {
         }
     })
     container.appendChild(containerItems)
-    return container
+    listenerButton()
 }
-
-export const listenerButton = () => {
+function listenerButton() {
     document.body.addEventListener('click', async (event) => {
         const elementTarget = event.target
         if (elementTarget.tagName == 'BUTTON') {
@@ -72,7 +69,6 @@ function closedItem(elementTarget, $container, $buttonItem, $item) {
     }, 400);
     $buttonItem.disabled = false
 }
-
 function formEvent() {
     document.body.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -88,4 +84,9 @@ function formEvent() {
             addItemsToCart(objInfoItem)
         }
     })
+}
+export const removeAllItems = (container) => {
+    while(container.firstElementChild){
+        container.firstElementChild.remove()
+    }
 }

@@ -1,5 +1,5 @@
-import { listenerButton, createItems } from './components/items.mjs'
-const $itemContainer = document.querySelector('body')
+import { createItems } from './components/items.mjs'
+const $itemContainer = document.querySelector('.items')
 import { insertHeader } from './components/header.mjs'
 insertHeader()
 
@@ -11,11 +11,9 @@ import { insertTemplateCart } from './components/cart.mjs'
 insertTemplateCart()
 
 
-import { getAllstikers, login } from './api-stikers.mjs'
+import { getAllstikers, login, createOrder, addItemsToOrder } from './api-stikers.mjs'
 const loadStikers = (exito) => {
-    let cosita = createItems(exito)
-    $itemContainer.appendChild(cosita)
-    listenerButton()
+    createItems(exito, $itemContainer)
 }
 getAllstikers().then(loadStikers)
 
@@ -24,8 +22,15 @@ listenerButtonCategory()
 listenerSearchByName()
 
 /* ------------ */
+// createOrder().then( res => {
+//     console.log(res)
+// })
 
-// function c (element) {
-//     console.log(element)
+// let objetito = {
+//     orderId:1,
+//     productId:5,
+//     amount:7
 // }
-// login().then(c)
+// addItemsToOrder(objetito).then(res => {
+//     console.log(res)
+// })

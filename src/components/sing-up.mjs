@@ -12,7 +12,6 @@ $form.addEventListener('submit', (event) => {
             password: data.get('password')
         }
     }
-    console.log(obj)
     singUp(obj).then(()=> {
         login({
             email:data.get('email'),

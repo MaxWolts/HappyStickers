@@ -4,6 +4,8 @@ const $form = document.querySelector('.login-box')
 $form.addEventListener('submit', (event) => {
     event.preventDefault()
     const data = new FormData($form)
+    console.log(typeof data ,data)
+    console.log(typeof data.get('email'),data.get('email'))
     let obj = {
         email: data.get('email'),
         password: data.get('password')
