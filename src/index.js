@@ -11,11 +11,13 @@ import { insertTemplateCart } from './components/cart.mjs'
 insertTemplateCart()
 
 
-import { getAllstikers, login, createOrder, addItemsToOrder } from './api-stikers.mjs'
-const loadStikers = (exito) => {
-    createItems(exito, $itemContainer)
+import { getStikers, login, createOrder, addItemsToOrder } from './api-stikers.mjs'
+import { lazyItems } from '../src/lazy.mjs'
+const loadStikers = async (exito) => {
+    await createItems(exito, $itemContainer)
+    // lazyItems(exito)
 }
-getAllstikers().then(loadStikers)
+getStikers().then(loadStikers)
 
 import { listenerButtonCategory, listenerSearchByName } from './components/menu.mjs'
 listenerButtonCategory()

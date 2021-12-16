@@ -1,5 +1,5 @@
 import { createTemplateMenu } from '../templates/t-menu.mjs'
-import { getStikerCategory, getStikerByName } from '../api-stikers.mjs'
+import { getStikerCategory, getStikerByName, getStikers } from '../api-stikers.mjs'
 import { createItems, removeAllItems } from '../components/items.mjs'
 export const insertTemplateMenu = () => {
     const $menu = document.querySelector('.menu')
@@ -18,10 +18,10 @@ export const listenerButtonCategory = () => {
     })
 }
 function actionCategory (id) {
-    getStikerCategory(id).then((res) => {
+    getStikers(12, 0,id).then((res) => {
         let $itemsContainer = document.querySelector('.items')
         removeAllItems($itemsContainer)
-        createItems(res.products, $itemsContainer, res.name)
+        createItems(res, $itemsContainer, id)
         let menu = document.querySelector('.header-menu')
         menu.click()
     })

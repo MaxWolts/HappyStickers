@@ -1,8 +1,18 @@
 const link = 'https://happystiker.herokuapp.com/api/v1'
 
-export const getAllstikers = async () => {
+export const getStikers = async (limit, offset, categoryId) => {
+    let params = ''
+    let cId = ''
+    if (limit && offset) {
+        params = `?limit=${limit}&offset=${offset}`
+    }else {
+        params = `?limit=12&offset=0`
+    }
+    if(categoryId) {
+        cId = `&categoryId=${categoryId}`
+    }
     try {
-        const response = await fetch(`${link}/products?limit=12&offset=0`)
+        const response = await fetch(`${link}/products${params}${cId}`)
         const data = await response.json()
         return data
     } catch (error) {

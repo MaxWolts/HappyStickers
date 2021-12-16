@@ -1,6 +1,7 @@
 import {createItemTemplate, createDataItem } from '../templates/t-item.mjs'
 import { animationOpacity, animationItemheightDown, animationItemheightUp } from '../animations.mjs'
 import { addItemsToCart } from './cart.mjs'
+import { lazyItems } from '../lazy.mjs'
 
 export const createItems = (obj, container, nameCategory) => {
     let flag = 0
@@ -8,18 +9,19 @@ export const createItems = (obj, container, nameCategory) => {
     containerItems.className = 'sub-items'
     obj.forEach(element => {
         if(flag < 3) {
-            containerItems.appendChild(createItemTemplate(element, nameCategory))
+            containerItems.appendChild(createItemTemplate(element))
             flag++
         }else {
             container.appendChild(containerItems)
             containerItems = document.createElement('div')
             containerItems.className = 'sub-items'
-            containerItems.appendChild(createItemTemplate(element, nameCategory))
+            containerItems.appendChild(createItemTemplate(element))
             flag = 1
         }
     })
     container.appendChild(containerItems)
     listenerButton()
+    lazyItems(obj, nameCategory)
 }
 function listenerButton() {
     document.body.addEventListener('click', async (event) => {

@@ -1,6 +1,10 @@
 .items {
-    display: flex;
-    flex-flow: wrap;
+    /* display: flex;
+    flex-flow: wrap; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 28rem);
+    margin: 0 auto;
+    max-width: 118rem;
     gap: 2rem;
     justify-content: center;
     justify-items: center;
