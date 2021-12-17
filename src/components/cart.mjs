@@ -3,7 +3,7 @@ import { createTemplateCart, createCartItem } from '../templates/t-cart.mjs'
 export const insertTemplateCart = () => {
     const $body = document.querySelector('body')
     $body.appendChild(createTemplateCart())
-    listenerButtons()
+    
     loadItemsOfStorage()
     
 }
@@ -34,7 +34,7 @@ const listenerButtons = () => {
             if (elementTarget.className === 'end-button') {
                 
                 saveInfoCart()
-                if (!document.cookie) {
+                if (!document.cookie || document.cookie == 'token=undefined') {
                     window.location.href = "./login.html"
                 } else {
                     window.location.href = "/payment.html"
@@ -43,6 +43,8 @@ const listenerButtons = () => {
         }
     })
 }
+listenerButtons()
+
 const deleteItem = (elementTarget) => {
     elementTarget.parentNode.remove()
     let $cartItems = document.querySelector('.cart-articles')

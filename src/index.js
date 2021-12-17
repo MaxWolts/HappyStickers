@@ -1,4 +1,4 @@
-import { createItems } from './components/items.mjs'
+import { createItems, formEvent } from './components/items.mjs'
 const $itemContainer = document.querySelector('.items')
 import { insertHeader } from './components/header.mjs'
 insertHeader()
@@ -21,6 +21,9 @@ getStikers().then(loadStikers)
 import { listenerButtonCategory, listenerSearchByName } from './components/menu.mjs'
 listenerButtonCategory()
 listenerSearchByName()
+
+
+// formEvent()
 
 /* ------------ */
 // createOrder().then( res => {

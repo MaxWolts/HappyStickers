@@ -42,12 +42,12 @@ const loadItems = () => {
     }
   })
 }
-export const lazyItems = (node, categodyId) => {
+export const lazyItems = (node, categoryId) => {
   itemsTotal = Object.keys(node).length
   if(itemsTotal>0) {
     observerFooter.observe($footer)
-    if(categodyId) {
-      category = categodyId
+    if(categoryId) {
+      category = categoryId
     }else {
       category = ''
     }

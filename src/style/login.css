@@ -43,6 +43,9 @@ body {
     gap: 1rem;
     padding: 0 2rem;
 }
+.input-box p {
+    font-weight: bold;
+}
 .input-box input {
     height: 4rem;
     width: 100%;
@@ -80,7 +83,7 @@ body {
     font-weight: bold;
 }
 .sign-up {
-    /* opacity: 100; */
+    display: none;
 }
 .activator-buttons-container {
     display: grid;

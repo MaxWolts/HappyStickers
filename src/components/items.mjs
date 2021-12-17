@@ -3,6 +3,9 @@ import { animationOpacity, animationItemheightDown, animationItemheightUp, anima
 import { addItemsToCart } from './cart.mjs'
 import { lazyItems } from '../lazy.mjs'
 
+listenerButton()
+formEvent()
+
 export const createItems = (obj, container, nameCategory) => {
     let flag = 0
     let containerItems = document.createElement('div')
@@ -20,10 +23,10 @@ export const createItems = (obj, container, nameCategory) => {
         }
     })
     container.appendChild(containerItems)
-    listenerButton()
-    lazyItems(obj, nameCategory)
     
+    lazyItems(obj, nameCategory)
 }
+
 function listenerButton() {
     document.body.addEventListener('click', async (event) => {
         const elementTarget = event.target
@@ -33,7 +36,6 @@ function listenerButton() {
             addAnimationAddItem(elementTarget)
         }
     })
-    formEvent()
 }
 function itemInteraction (id, elementTarget) {
     if(elementTarget.id == `b${id}` || elementTarget.id == `c${id}`) {
@@ -74,8 +76,9 @@ function closedItem(elementTarget, $container, $buttonItem, $item) {
     }, 400);
     $buttonItem.disabled = false
 }
-function formEvent() {
+export function formEvent() {
     document.body.addEventListener('submit', (event) => {
+        console.log('sumbmit' + event)
         event.preventDefault()
         const target = event.target
         if(target.className.includes('item-description')) {

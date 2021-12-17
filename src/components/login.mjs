@@ -20,6 +20,8 @@ $form.addEventListener('submit', (event) => {
                 window.location.href = "http://172.19.199.247:5500/payment.html";
             }
         }
+    }).catch((err) => {
+        console.log(err)
     })
 })
 
@@ -48,8 +50,8 @@ function createAnimationSwap () {
     let animationSwap = async (className) => {
         if (className == 'active-login') {
             if (login == 0) {
-                animationItemheightUp('login-and-sign-up-container', '33.5rem')
                 onButton(className)
+                animationItemheightUp('login-and-sign-up-container', '33.5rem')
                 changeDisplay('login')
                 changeDisplay('sign-up')
                 loginSingUpOpacity('sign-up', $signUp.style.opacity)
@@ -62,8 +64,8 @@ function createAnimationSwap () {
             }
         }else {
             if (singUp == 0) {
-                animationItemheightDown('login-and-sign-up-container')
                 onButton(className)
+                animationItemheightDown('login-and-sign-up-container')
                 changeDisplay('login')
                 loginSingUpOpacity('login', $login.style.opacity)
                 setTimeout(() => {
