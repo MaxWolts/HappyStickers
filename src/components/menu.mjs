@@ -1,6 +1,7 @@
 import { createTemplateMenu } from '../templates/t-menu.mjs'
 import { getStikerByName, getStikers } from '../api-stikers.mjs'
 import { createItems, removeAllItems } from '../components/items.mjs'
+import { lazyItems } from '../lazy.mjs'
 export const insertTemplateMenu = () => {
     const $menu = document.querySelector('.menu')
     $menu.innerHTML = createTemplateMenu()
@@ -23,6 +24,7 @@ function actionCategory (id) {
         removeAllItems($itemsContainer)
         createItems(res, $itemsContainer, id)
         let menu = document.querySelector('.header-menu')
+        lazyItems(res, id)
         menu.click()
     })
 }

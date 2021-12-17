@@ -61,11 +61,11 @@
     width: 29rem;
 }
 .buttons-menu button {
-    border: 1px solid var(--blue-black);
+    border: 2px solid var(--blue-black);
     cursor: pointer;
 }
 .buttons-menu button:hover {
-    border: solid 0.3rem var(--blue-black);
+    
     box-shadow: 0px 4px 7px 2px rgb(0 0 0 / 25%);
 }
 .buttons-menu button:active {
@@ -76,6 +76,9 @@
 .buttons-menu p {
     padding: 1rem 0;
     font-size: 1.8rem;
+}
+.account-button:hover, .cart-button:hover {
+    border: solid 0.3rem var(--blue-black);
 }
 .account-button, .cart-button, .category-button {
     width: 29rem;
@@ -88,4 +91,7 @@
 }
 .category-button {
     background-color: var(--white);
+}
+.category-button:hover {
+    border: solid 0.3rem var(--primary-h);
 }

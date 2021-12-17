@@ -35,9 +35,9 @@ const listenerButtons = () => {
                 
                 saveInfoCart()
                 if (!document.cookie) {
-                    window.location.href = "http://172.19.199.247:5500/login.html"
+                    window.location.href = "./login.html"
                 } else {
-                    window.location.href = "http://172.19.199.247:5500/payment.html"
+                    window.location.href = "/payment.html"
                 }
             }
         }
@@ -50,7 +50,6 @@ const deleteItem = (elementTarget) => {
         disableButtonCart()
         let $flag = document.querySelector('.cart-flag')
         $flag.style.display = 'block'
-        console.log('uwu')
     }
     saveInfoCart()
 }

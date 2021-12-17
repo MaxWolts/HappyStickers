@@ -12,6 +12,10 @@ body {
     font-size: 3rem;
     color: var(--white);
 }
+.hero-title a {
+    color:var(--white);
+    text-decoration: none;
+}
 .login {
     display: flex;
     flex-direction: column;
