@@ -1,5 +1,6 @@
 html{
     color: var(--blue-black);
+    font-family: var(--font-primary);
 }
 body {
     display: grid;
@@ -71,7 +72,7 @@ body {
     text-align: right;
     padding: 0 2rem;
     font-size: 1.4rem;
-    color: var(--primary-h);
+    color: var(--link);
 }
 .create-account {
     font-size: 2rem;
@@ -99,9 +100,11 @@ body {
 }
 .active-login {
     background-color:var(--white);
+    border-right: 2px solid var(--gray-m);
 }
 .active-sign-up {
     background-color: var(--primary-m);
+    border-left: 2px solid var(--gray-m);
 }
 .login-and-sign-up-container {
     min-height: 33.5rem;
@@ -110,6 +113,7 @@ body {
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     font-size: 1.8rem;
+    border-top: 2px solid var(--gray-m);
 }
 .sing-up-form{
     display: grid;

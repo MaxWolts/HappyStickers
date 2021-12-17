@@ -55,7 +55,7 @@ export function createDataItem (object, nameCategory) {
         </p>
         <div class="add-to-cart" action="#">
             <p class="item-quantity">Cantidad:
-                <input name="quantity" type="number" name="numero" value="1" min="1" max="50" required pattern="[0-9]{5}" />
+                <input name="quantity" type="number" name="numero" value="1" min="1" max="50" required pattern="[0-9]{5}" aria-label="cantidad de stikers que quieres" />
             </p>
             <div class="add-to-cart-buttons">
                 <button class='add-button' type="submit" id='a${object.id}'>Añadir al carrito</button>
