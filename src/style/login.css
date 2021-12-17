@@ -1,5 +1,5 @@
-*{
-
+html{
+    color: var(--blue-black);
 }
 body {
     display: grid;
@@ -9,14 +9,18 @@ body {
     background: linear-gradient(0deg, rgba(255,171,76,1) 0%, rgba(255,95,126,1) 76%);
 }
 .hero-title {
+    display: grid;
+    height: 10rem;
     font-size: 3rem;
     color: var(--white);
 }
 .hero-title a {
+    align-self: center;
     color:var(--white);
     text-decoration: none;
 }
 .login {
+    display: block;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -32,9 +36,6 @@ body {
     align-content: space-evenly;
     height: 33.5rem;
     width: 29rem;
-    background-color: var(--white);
-    border-radius: 1rem;
-    font-size: 1.8rem;
 }
 .input-box {
     display: grid;
@@ -42,9 +43,11 @@ body {
     padding: 0 2rem;
 }
 .input-box input {
+    height: 4rem;
     width: 100%;
     font-size: 1.8rem;
     border: none;
+    padding: 0 0 0 1rem;
     border-bottom: 0.2rem solid var(--blue-black) ;
 }
 .login-button {
@@ -74,4 +77,46 @@ body {
     font-size: 2rem;
     color: var(--blue-black);
     font-weight: bold;
+}
+.sign-up {
+    /* opacity: 100; */
+}
+.activator-buttons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--white);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    overflow: hidden;
+}
+.activator-buttons-container button {
+    height: 7rem;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--blue-black);
+}
+.active-login {
+    background-color:var(--white);
+}
+.active-sign-up {
+    background-color: var(--primary-m);
+}
+.login-and-sign-up-container {
+    min-height: 33.5rem;
+    width: 29rem;
+    background-color: var(--white);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    font-size: 1.8rem;
+}
+.sing-up-form{
+    display: grid;
+    gap: 2rem;
+    padding: 2rem 0;
+    width: 29rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+    font-size: 1.8rem;
 }

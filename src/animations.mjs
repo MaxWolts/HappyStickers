@@ -12,11 +12,41 @@ export const animationOpacity =  (element) => {
         })
     }
 }
-export const animationItemheightDown = (item) => {
-    gsap.to(`#${item.id}`, {minHeight: '64rem',duration:0.4})
+export const animationItemheightDown = async (item, newHeight) => {
+    let element = ''
+    let height = ''
+    if(typeof item == 'object') {
+        element = `#${item.id}`
+    }else {
+        element = `.${item}`
+    }
+    if (newHeight) {
+        height = newHeight
+    }else {
+        height = '64rem'
+    }
+    await gsap.to(`${element}`, {
+        minHeight: `${height}`,
+        duration:0.4
+    })
 }
-export const animationItemheightUp = (item) => {
-    gsap.to(`#${item.id}`, {minHeight: '36rem',duration:0.4})
+export const animationItemheightUp = (item, newHeight) => {
+    let element = ''
+    let height = ''
+    if(typeof item == 'object') {
+        element = `#${item.id}`
+    }else {
+        element = `.${item}`
+    }
+    if (newHeight) {
+        height = newHeight
+    }else {
+        height = '36rem'
+    }
+    gsap.to(`${element}`, {
+        minHeight: `${height}`,
+        duration:0.4
+    })
 }
 
 const animationMenu = () => {
@@ -171,4 +201,30 @@ export const animationAddItem = (className) => {
         ease:Linear.easeNone, paused:true, reversed:true
     })
     return animation
+}
+
+export const offButton = (className) => {
+    gsap.to (`.${className}`, {
+        backgroundColor: 'var(--primary-m)',
+        duration: 0,
+    })
+}
+export const onButton = (className) => {
+    gsap.to(`.${className}`, {
+        backgroundColor: 'var(--white)',
+        duration: 0,
+    })
+}
+export const loginSingUpOpacity = (className, opacity) => {
+    if (opacity == '0') {
+        gsap.to(`.${className}`, {
+            duration:0.4,
+            opacity: 1,
+        })
+    }else {
+        gsap.to(`.${className}`, {
+            duration:0.4,
+            opacity: 0,
+        })
+    }
 }

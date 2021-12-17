@@ -10,26 +10,61 @@
 </head>
 <body>
     <h1 class="hero-title"><a href="./index.html">HappyStikers</a></h1>
-    <section class="login">
-        <p class="login-title">Login</p>
-        <form class="login-box">
-            <div class="input-box user">
-                <p>Correo</p>
-                <input type="email" placeholder="Escribe tu nombre de correo" name="email">
-            </div>
-            <div class="input-box password">
-                <p>Contraceña</p>
-                <input type="password" placeholder="Escribe tu contraceña" name="password">
-            </div>
-            <a href="" class="remind-password">
-                ¿Olvidaste tu contraceña?
-            </a>
-            <button class="login-button">Login</button>
-        </form>
-        <a href="./sing-up.html" class="create-account">
-            Crear una cuenta
-        </a>
+    <section class="login-and-sign-up">
+        <div class="activator-buttons-container">
+            <button class="active-login">Login</button>
+            <button class="active-sign-up">Sign up</button>
+        </div>
+        <div class="login-and-sign-up-container">
+            <section class="login">
+                <form class="login-box">
+                    <div class="input-box user">
+                        <p>Correo</p>
+                        <input type="email" placeholder="Escribe tu correo" name="email">
+                    </div>
+                    <div class="input-box password">
+                        <p>Contraceña</p>
+                        <input type="password" placeholder="Escribe tu contraceña" name="password">
+                    </div>
+                    <a href="" class="remind-password">
+                        ¿Olvidaste tu contraceña?
+                    </a>
+                    <button class="login-button">Login</button>
+                </form>
+            </section>
+            <section class="sign-up">
+                <form class="sing-up-form">
+                    <div class="input-box name">
+                        <p>Nombre</p>
+                        <input type="text" placeholder="Escribe tu nombre" name="name">
+                    </div>
+                    <div class="input-box lastname">
+                        <p>Apellido</p>
+                        <input type="text" placeholder="Escribe tu apellido" name="lastname">
+                    </div>
+                    <div class="input-box phone">
+                        <p>Telefono</p>
+                        <input type="number" placeholder="Escribe tu telefono" name="phone">
+                    </div>
+                    <div class="input-box email">
+                        <p>Correo</p>
+                        <input type="email" placeholder="Escribe tu correo" name="email">
+                    </div>
+                    <div class="input-box password">
+                        <p>Contraceña</p>
+                        <input type="password" placeholder="Escribe tu contraceña" name="password">
+                    </div>
+                    <div class="input-box r-password">
+                        <p>Repite tu contraceña</p>
+                        <input type="password" placeholder="repite tu contraceña">
+                    </div>
+                    <button class="login-button">Crear cuenta</button>
+                </form>
+            </section>
+        </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/TextPlugin.min.js"></script>
     <script src="./src/components/login.mjs" type="module"></script>
 </body>
 </html>
