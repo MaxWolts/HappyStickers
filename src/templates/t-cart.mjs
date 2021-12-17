@@ -8,7 +8,7 @@ export const createTemplateCart = () => {
     content.appendChild(titleCart)
 
     let descriptionTitle = document.createElement('p')
-    descriptionTitle.textContent= 'Descripción'
+    descriptionTitle.textContent= 'Descripción:'
     content.appendChild(descriptionTitle)
 
     let flag = document.createElement('p')

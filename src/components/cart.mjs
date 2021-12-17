@@ -50,6 +50,7 @@ const deleteItem = (elementTarget) => {
         disableButtonCart()
         let $flag = document.querySelector('.cart-flag')
         $flag.style.display = 'block'
+        console.log('uwu')
     }
     saveInfoCart()
 }
@@ -108,7 +109,7 @@ function enableButtonCart() {
 
 function loadItemsOfStorage() {
     let items = JSON.parse(localStorage.getItem('infoCart'))
-    if(items) {
+    if(items && items.id.length > 0) {
         let names = items.names
         let ids = items.id
         let prices = items.prices

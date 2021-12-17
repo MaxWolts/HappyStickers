@@ -22,7 +22,7 @@ export const createItems = (obj, container, nameCategory) => {
     container.appendChild(containerItems)
     listenerButton()
     lazyItems(obj, nameCategory)
-    formEvent()
+    
 }
 function listenerButton() {
     document.body.addEventListener('click', async (event) => {
@@ -33,6 +33,7 @@ function listenerButton() {
             addAnimationAddItem(elementTarget)
         }
     })
+    formEvent()
 }
 function itemInteraction (id, elementTarget) {
     if(elementTarget.id == `b${id}` || elementTarget.id == `c${id}`) {

@@ -1,6 +1,4 @@
 .items {
-    /* display: flex;
-    flex-flow: wrap; */
     display: grid;
     grid-template-columns: repeat(auto-fill, 28rem);
     margin: 0 auto;
@@ -48,7 +46,7 @@
     font-size: 1.8rem;
     text-align: center;
 }
-.item-button{
+/* .item-button{
     opacity: 1;
     width: 17.5rem;
     height: 4.5rem;
@@ -60,10 +58,28 @@
     color: var(--white);
     font-weight: bold;
     background-color: var(--primary-h);
+} */
+.item-button{
+    opacity: 1;
+    width: 17.5rem;
+    height: 4.5rem;
+    border-radius: 1rem;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    letter-spacing: var(--letter-spacing);
+    border: 2px solid var(--blue-black);
+    color: var(--blue-black);
+    font-weight: bold;
+    background-color: var(--white);
 }
-.item-button:hover {
+/* .item-button:hover {
     cursor: pointer;
     background-color: var(--primary);
+} */
+.item-button:hover {
+    cursor: pointer;
+    border: 4px solid var(--primary-h);
+    box-shadow: 0px 4px 7px 2px rgb(0 0 0 / 25%);
 }
 .item-categories a {
     color: var(--primary-h);
@@ -104,27 +120,32 @@
     font-size:1.82rem;
     border-radius: 10px;
     letter-spacing: var(--letter-spacing);
-    color: var(--white);
     font-weight: bold;
+    
 }
 .add-to-cart-buttons button:hover {
     cursor: pointer;
+    box-shadow: 0px 4px 7px 2px rgb(0 0 0 / 25%);
 }
 .add-button {
-    border: 3px solid var(--primary);
-    background-color: var(--primary-h);
+    border: 2px solid var(--primary);
+    color: var(--blue-black);
+    background-color: var(--white);
 }
 
+
 .add-button:hover {
-    background-color: var(--primary);
+    border: 4px solid var(--primary-h);
 }
 
 .closed-button {
-    border: 3px solid var(--gray);
-    background-color: var(--blue-black);
+    border: 2px solid var(--blue-black);
+    color: var(--blue-black);
+    background-color: var(--white);
 }
 .closed-button:hover {
-    background-color: var(--gray);
+    border: 4px solid var(--blue-black);
+    background-color: var(--gray-m);
 }
 .item-quantity input{
     font-size: 1.8rem;

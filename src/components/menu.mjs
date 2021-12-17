@@ -1,5 +1,5 @@
 import { createTemplateMenu } from '../templates/t-menu.mjs'
-import { getStikerCategory, getStikerByName, getStikers } from '../api-stikers.mjs'
+import { getStikerByName, getStikers } from '../api-stikers.mjs'
 import { createItems, removeAllItems } from '../components/items.mjs'
 export const insertTemplateMenu = () => {
     const $menu = document.querySelector('.menu')
