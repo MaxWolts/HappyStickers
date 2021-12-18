@@ -22,7 +22,7 @@ export const registerImage = (image) => {
 
 
 let $footer = document.querySelector('footer')
-const observerFooter = new IntersectionObserver((entries) => {
+export const observerFooter = new IntersectionObserver((entries) => {
   entries.filter(isIntersecting).forEach(loadItems)
 })
 
@@ -42,9 +42,9 @@ const loadItems = () => {
     }
   })
 }
-export const lazyItems = (node, categoryId) => {
+export const lazyItems = (node, categoryId, disable) => {
   itemsTotal = Object.keys(node).length
-  if(itemsTotal>0) {
+  if(itemsTotal>0 && !disable) {
     observerFooter.observe($footer)
     if(categoryId) {
       category = categoryId

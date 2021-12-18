@@ -1,6 +1,7 @@
 import { createTemplateMenu } from '../templates/t-menu.mjs'
 import { getStikerByName, getStikers } from '../api-stikers.mjs'
 import { createItems, removeAllItems } from '../components/items.mjs'
+import { observerFooter } from '../lazy.mjs'
 export const insertTemplateMenu = () => {
     const $menu = document.querySelector('.menu')
     createTemplateMenu($menu)
@@ -37,9 +38,13 @@ export function listenerSearchByName () {
                 if (Object.keys(res).length > 0){
                     let $itemsContainer = document.querySelector('.items')
                     removeAllItems($itemsContainer)
-                    createItems(res, $itemsContainer, res.name)
-                    let menu = document.querySelector('.header-menu')
-                    menu.click()
+                    let $footer = document.querySelector('footer')
+                    observerFooter.unobserve($footer)
+                    setTimeout(() => {
+                        createItems(res, $itemsContainer, res.name, 'disable')
+                        let menu = document.querySelector('.header-menu')
+                        menu.click()
+                    }, 400);
                 }else {
                     window.alert('No se encontro resultado')
                 }

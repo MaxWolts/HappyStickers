@@ -6,7 +6,7 @@ import { lazyItems } from '../lazy.mjs'
 listenerButton()
 formEvent()
 
-export const createItems = (obj, container, nameCategory) => {
+export const createItems = (obj, container, nameCategory, disable) => {
     let flag = 0
     let containerItems = document.createElement('div')
     containerItems.className = 'sub-items'
@@ -23,8 +23,7 @@ export const createItems = (obj, container, nameCategory) => {
         }
     })
     container.appendChild(containerItems)
-    
-    lazyItems(obj, nameCategory)
+    lazyItems(obj, nameCategory, disable)
 }
 
 function listenerButton() {
@@ -78,7 +77,6 @@ function closedItem(elementTarget, $container, $buttonItem, $item) {
 }
 export function formEvent() {
     document.body.addEventListener('submit', (event) => {
-        console.log('sumbmit' + event)
         event.preventDefault()
         const target = event.target
         if(target.className.includes('item-description')) {
