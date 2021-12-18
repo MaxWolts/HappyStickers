@@ -51,13 +51,15 @@ const listenerSwapButtons = () => {
         }
     })
 }
+let animationSwap = createAnimationSwap()
+listenerSwapButtons()
 let $login = document.querySelector('.login')
 $login.style.display = 'block'
 $login.style.opacity = '100'
 let $signUp = document.querySelector('.sign-up')
 $signUp.style.display = 'none'
 $signUp.style.opacity = '0'
-listenerSwapButtons()
+
 
 function createAnimationSwap () {
     let login = 1
@@ -95,13 +97,17 @@ function createAnimationSwap () {
     }
     return animationSwap
 }
-let animationSwap = createAnimationSwap()
 
-function changeDisplay(className) {
+
+function changeDisplay(className, newDisplay) {
     let $section = document.querySelector(`.${className}`)
     let display = $section.style.display
     if (display == 'none') {
-        $section.style.display = 'block'
+        if (newDisplay) {
+            $section.style.display = newDisplay
+        }else {
+            $section.style.display = 'block'
+        }
     }else {
         $section.style.display = 'none'
     }

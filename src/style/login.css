@@ -1,7 +1,4 @@
-html{
-    color: var(--blue-black);
-    font-family: var(--font-primary);
-}
+
 body {
     display: grid;
     justify-items: center;
@@ -9,6 +6,7 @@ body {
     background: rgb(255,171,76);
     background: linear-gradient(0deg, rgba(255,171,76,1) 0%, rgba(255,95,126,1) 76%);
 }
+
 .hero-title {
     display: grid;
     height: 10rem;
@@ -54,22 +52,26 @@ body {
     padding: 0 0 0 1rem;
     border-bottom: 0.2rem solid var(--blue-black) ;
 }
-.login-button {
-    justify-self: center;
-    width: 175px;
-    height: 45px;
-    border-radius: 10px;
-    font-family: var(--font-primary);
-    font-size: 2rem;
+.form-button {
+    height: 4.5rem;
+    width: fit-content;
+    padding: 0 2rem;
+    font-size:1.82rem;
+    border-radius: 1rem;
     letter-spacing: var(--letter-spacing);
-    border: 3px solid var(--primary);
-    color: var(--white);
     font-weight: bold;
-    background-color: var(--primary-h);
+    font-family: var(--font-primary);
+
+    justify-self: center;
+    border: 2px solid var(--primary);
+    color: var(--blue-black);
+    font-weight: bold;
+    background-color: var(--white);
 }
-.login-button:hover {
+.form-button:hover {
     cursor: pointer;
-    background-color: var(--primary);
+    border: 4px solid var(--primary);
+    box-shadow: 0px 4px 7px 2px rgb(0 0 0 / 25%);
 }
 .remind-password {
     text-align: right;
@@ -127,3 +129,4 @@ body {
     border-radius: 1rem;
     font-size: 1.8rem;
 }
+
