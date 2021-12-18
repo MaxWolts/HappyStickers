@@ -1,28 +1,43 @@
-import { login } from '../api-stikers.mjs'
+import { login, singUp } from '../api-stikers.mjs'
 import { offButton, onButton, loginSingUpOpacity, animationItemheightDown , animationItemheightUp} from '../animations.mjs'
 
-const $form = document.querySelector('.login-box')
-$form.addEventListener('submit', (event) => {
+let $form = document.querySelector('.login-box')
+let $formSignUp = document.querySelector('.sign-up-form')
+console.log($formSignUp)
+document.addEventListener('submit', (event) => {
     event.preventDefault()
-    const data = new FormData($form)
-    console.log(typeof data ,data)
-    console.log(typeof data.get('email'),data.get('email'))
-    let obj = {
-        email: data.get('email'),
-        password: data.get('password')
-    }
-    login(obj).then((res)=> {
-        if(res) {
-            document.cookie = `token=${res.token}`
-            if (!localStorage.getItem('infoCart')) {
-                window.location.href = "http://172.19.199.247:5500/index.html";
-            } else {
-                window.location.href = "http://172.19.199.247:5500/payment.html";
-            }
+    let data = {}
+    // console.log(`data del form----------`)
+    // console.log(typeof data ,data)
+    // console.log(typeof data.get('email'),data.get('email'))
+    // console.log(`---------- END`)
+    let objData = {}
+    if (event.target.className === 'login-box') {
+        data = new FormData($form)
+        objData = {
+            email: data.get('email'),
+            password: data.get('password')
         }
-    }).catch((err) => {
-        console.log(err)
-    })
+        runLogin(objData)
+    }else {
+        data = new FormData($formSignUp)
+        console.log(data.get('password') , data.get('repeat-password'))
+        if (data.get('password') !== data.get('repeat-password')) {
+            alert('Los password no coinsiden')
+        }else {
+            objData = {
+                name: data.get('name'),
+                lastName: data.get('lastname'),
+                phone: data.get('phone'),
+                user: {
+                    email: data.get('email'),
+                    password: data.get('password')
+                }
+            }
+            runSignUp(objData)
+        }
+    }
+    
 })
 
 const listenerSwapButtons = () => {
@@ -65,7 +80,7 @@ function createAnimationSwap () {
         }else {
             if (singUp == 0) {
                 onButton(className)
-                animationItemheightDown('login-and-sign-up-container')
+                animationItemheightDown('login-and-sign-up-container', '66rem')
                 changeDisplay('login')
                 loginSingUpOpacity('login', $login.style.opacity)
                 setTimeout(() => {
@@ -90,4 +105,32 @@ function changeDisplay(className) {
     }else {
         $section.style.display = 'none'
     }
+}
+
+function runLogin (objData) {
+    login(objData).then((res)=> {
+        console.log(typeof res, res)
+        if(res && !res.error) {
+            document.cookie = `token=${res.token}`
+            // if (!localStorage.getItem('infoCart')) {
+            //     window.location.href = "http://172.19.199.247:5500/index.html";
+            // } else {
+            //     window.location.href = "http://172.19.199.247:5500/payment.html";
+            // }
+        }else{
+            alert('Datos incorrectos', res.error)
+        }
+    })
+}
+
+function runSignUp (objData) {
+    singUp(objData).then(res => {    
+        if(res && !res.error) {
+            console.log(typeof res, res)
+            alert('cuenta creada')
+        }else{
+            console.log(typeof res, res.error)
+            alert('algo salio mal')
+        }
+    })
 }

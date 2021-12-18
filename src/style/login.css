@@ -118,7 +118,7 @@ body {
     font-size: 1.8rem;
     border-top: 2px solid var(--gray-m);
 }
-.sing-up-form{
+.sign-up-form{
     display: grid;
     gap: 2rem;
     padding: 2rem 0;
