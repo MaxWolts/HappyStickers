@@ -80,13 +80,13 @@
 .account-button:hover, .cart-button:hover {
     border: solid 0.3rem var(--blue-black);
 }
-.account-button, .cart-button, .category-button {
+.account-button, .login-unlogin-button, .category-button {
     width: 29rem;
     height: 4.3rem;
     font-size: 1.8rem;
     border-radius: 5px;
 }
-.account-button, .cart-button {
+.account-button, .login-unlogin-button {
     background-color: var(--primary);
 }
 .category-button {

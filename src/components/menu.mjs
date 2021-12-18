@@ -3,7 +3,7 @@ import { getStikerByName, getStikers } from '../api-stikers.mjs'
 import { createItems, removeAllItems } from '../components/items.mjs'
 export const insertTemplateMenu = () => {
     const $menu = document.querySelector('.menu')
-    $menu.innerHTML = createTemplateMenu()
+    createTemplateMenu($menu)
 }
 
 export const listenerButtonCategory = () => {
