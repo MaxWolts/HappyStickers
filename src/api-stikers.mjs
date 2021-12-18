@@ -80,7 +80,7 @@ export const createOrder = async () => {
     header.append('Authorization', `${token}`)
     try {
         const response = await fetch(url, {
-            method: 'GET',
+            method: 'POST',
             mode: 'cors',
             headers: header
         })
@@ -103,6 +103,40 @@ export const addItemsToOrder = async (obj) => {
             mode: 'cors',
             headers: header,
             body: JSON.stringify(obj),
+        })
+        const data = await response.json()
+        return data
+    }catch (err) {
+        return err
+    }
+}
+export const recoveryPassword = async (body) => {
+    const url = `${link}/auth/recovery`
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(obj),
+            mode: 'cors',
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        })
+        const data = await response.json()
+        return data
+    }catch (err) {
+        return err
+    }
+}
+export const changePassword = async (obj) => {
+    const url = `${link}/auth/change-password`
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(obj),
+            mode: 'cors',
+            headers:{
+                'Content-Type': 'application/json'
+            }
         })
         const data = await response.json()
         return data

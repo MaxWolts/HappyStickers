@@ -8,24 +8,22 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Ruthie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style/style.css">
-    <link rel="stylesheet" href="./src/style/change-password.css">
+    <link rel="stylesheet" href="./src/style/remember.css">
     <title>Recovery</title>
 </head>
 <body>
     <h1 class="hero-title"><a href="./index.html">HappyStikers</a></h1>
-    <section class="change-password-container">
+    <section class="remember-my-password-container">
         <h3>Recuperar contraseña</h3>
-        <form class="change-password"action="">
+        <form class="remember-my-password"action="">
             <div class="input-box">
-                <p>Nueva contraseña</p>
-                <input type="password" placeholder="Escribe contraseña" name="password" required="required">
+                <p>Correo</p>
+                <input type="email" placeholder="Escribe tu correo" name="email" required="required">
             </div>
-            <div class="input-box">
-                <p>Repite tu contraseña</p>
-                <input type="password" placeholder="Repite tu contraseña" name="r-password" required="required">
-            </div>
-            <button class="form-button">Cambiar contraseña</button>
+            <button class="form-button">Recordar</button>
         </form>
+        <a class="return" href="./index.html">Volver a la tienda</a>
     </section>
 </body>
+<script src="./src/components/recovery.mjs" type="module"></script>
 </html>
