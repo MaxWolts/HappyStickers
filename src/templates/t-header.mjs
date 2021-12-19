@@ -12,7 +12,7 @@ const linesIcon = `<svg class="lines" width="34" height="24" viewBox="0 0 34 24"
 const createTemplateHeader = () => {
     const headerTemplate = `
         <button class="header-menu" alt="button" aria-label="Boton abrir menu">${linesIcon}</button>
-        <h1 class="header-hero-name">HappyStikers</h1>
+        <h1 class="header-hero-name">HappyStickers</h1>
         <button class="header-cart" aria-label="Boton abrir menu carrito de compras"> ${cartIcon}</button>
     `
     return headerTemplate

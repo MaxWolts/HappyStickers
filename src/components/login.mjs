@@ -7,10 +7,6 @@ console.log($formSignUp)
 document.addEventListener('submit', (event) => {
     event.preventDefault()
     let data = {}
-    // console.log(`data del form----------`)
-    // console.log(typeof data ,data)
-    // console.log(typeof data.get('email'),data.get('email'))
-    // console.log(`---------- END`)
     let objData = {}
     if (event.target.className === 'login-box') {
         data = new FormData($form)
