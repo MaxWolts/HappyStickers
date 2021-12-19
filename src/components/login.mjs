@@ -3,7 +3,7 @@ import { offButton, onButton, loginSingUpOpacity, animationItemheightDown , anim
 
 let $form = document.querySelector('.login-box')
 let $formSignUp = document.querySelector('.sign-up-form')
-console.log($formSignUp)
+
 document.addEventListener('submit', (event) => {
     event.preventDefault()
     let data = {}

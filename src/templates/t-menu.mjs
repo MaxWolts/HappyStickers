@@ -41,7 +41,7 @@ const createElement = (data) => {
 const createSearchBar = () => {
     const searchContainer = createElement( {typeElement: 'DIV',className: 'search',})
     const form = createElement({typeElement: 'FORM',className: 'search-form',})
-    const input = createElement({typeElement: 'INPUT', type: 'text', name: 'name', placeholder: 'Busca tu stiker por su nombre'})
+    const input = createElement({typeElement: 'INPUT', type: 'text', name: 'name', placeholder: 'Busca tu sticker por su nombre'})
     form.appendChild(input)
     const buttonClean = createElement({typeElement: 'BUTTON', type: 'reset', className: 'clean', content: 'X', ariaLabel: 'borrar contenido del input'})
     form.appendChild(buttonClean)
@@ -59,7 +59,7 @@ const createButtonsMenu = () => {
     let aux = document.createElement('div')
     
     if (!document.cookie || document.cookie == 'token=undefined') {
-        aux.innerHTML = `<button class="login-unlogin-button" role='link' onclick="window.location='../../login.html'">Logearme</button>
+        aux.innerHTML = `<button class="login-button" role='link' onclick="window.location='../../login.html'">Logearme</button>
         `
     }else {
         const accountButton = document.createElement('div')
@@ -68,7 +68,7 @@ const createButtonsMenu = () => {
         buttonsContainer.appendChild(accountButton.firstElementChild)
         aux.appendChild(createElement({
             typeElement: 'BUTTON',
-            className: 'login-unlogin-button',
+            className: 'unlogin-button',
             content: 'Cerrar sessión',
         }))
     }
@@ -108,7 +108,7 @@ const createButtonsMenu = () => {
         className: 'category-button',
         content: 'Varios',
     })
-    categoryVariosButton.dataset.categoryid = '5'
+    categoryVariosButton.dataset.categoryid = '4'
     buttonsContainer.appendChild(categoryVariosButton)
     
 

@@ -4,13 +4,11 @@ import { createItemTotal } from '../templates/t-payment.mjs'
 let yourCart = document.querySelector('.your-cart')
 createItemTotal(yourCart)
 
-document.addEventListener('submit', (event) => {
+document.addEventListener('submit', async (event) => {
     let flag = 0
     event.preventDefault()
     if (event.target) {
-        createOrder().then( async res => {
-            console.log(res)
-            console.log(res.id)
+        await createOrder().then( async res => {
             const obj = JSON.parse(localStorage.getItem('infoCart'))
             let item = {}
             for (let i = 0; i < obj.id.length; i++) {
@@ -19,7 +17,6 @@ document.addEventListener('submit', (event) => {
                     productId: parseInt(obj.id[i]),
                     amount: parseInt(obj.quantities[i])
                 }
-                console.log(item)
                 await addItemsToOrder(item).then (res => {
                     if(!res.error) {
                         flag++
@@ -27,8 +24,9 @@ document.addEventListener('submit', (event) => {
                 })
             }
         })
-    }
-    if (flag > 0) {
-        localStorage.removeItem('infoCart')
+        if (flag > 0) {
+            alert('Se realizo el pedido con exito')
+            localStorage.removeItem('infoCart')
+        }
     }
 })

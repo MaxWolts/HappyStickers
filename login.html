@@ -12,7 +12,7 @@
     <title>Login</title>
 </head>
 <script>
-    if (document.cookie || !document.cookie == 'token=undefined') {
+    if (document.cookie.length > 10 || document.cookie) {
         window.location.href = "./index.html" 
     }
 </script>

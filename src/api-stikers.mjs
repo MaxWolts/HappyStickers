@@ -98,7 +98,7 @@ export const addItemsToOrder = async (obj) => {
     header.append('Content-Type', 'application/json')
     header.append('Authorization', `${token}`)
     try {
-        console.log(obj)
+        
         const response = await fetch(url, {
             method: 'POST',
             body: JSON.stringify(obj),
