@@ -36,7 +36,6 @@
     top: 0;
 }
 .item-description {
-    /* min-height: 120px; */
     display: grid;
     justify-items: center;
     margin: 1rem 1.3rem;
@@ -46,19 +45,7 @@
     font-size: 1.8rem;
     text-align: center;
 }
-/* .item-button{
-    opacity: 1;
-    width: 17.5rem;
-    height: 4.5rem;
-    border-radius: 1rem;
-    font-family: var(--font-primary);
-    font-size: 2rem;
-    letter-spacing: var(--letter-spacing);
-    border: 3px solid var(--primary);
-    color: var(--white);
-    font-weight: bold;
-    background-color: var(--primary-h);
-} */
+
 .item-button{
     opacity: 1;
     width: 17.5rem;
@@ -72,10 +59,6 @@
     font-weight: bold;
     background-color: var(--white);
 }
-/* .item-button:hover {
-    cursor: pointer;
-    background-color: var(--primary);
-} */
 .item-button:hover {
     cursor: pointer;
     border: 4px solid var(--primary-h);
