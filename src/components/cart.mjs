@@ -37,7 +37,7 @@ const listenerButtons = () => {
                 if (!document.cookie || document.cookie == 'token=undefined') {
                     window.location.href = "./login.html"
                 } else {
-                    window.location.href = "/payment.html"
+                    window.location.href = "./payment.html"
                 }
             }
         }

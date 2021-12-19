@@ -27,7 +27,7 @@ document.addEventListener('submit', async (event) => {
         if (flag > 0) {
             alert('Se realizo el pedido con exito')
             localStorage.removeItem('infoCart')
-            window.location.href = "../../index.html";
+            window.location.href = "./";
         }
     }
 })

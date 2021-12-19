@@ -23,7 +23,7 @@ const runRecovery = (body) => {
     changePassword(body).then(res => {    
         if(res && !res.error) {
             console.log(typeof res, res)
-            alert('se cambio la contraseña exitosamente!')
+            alert('¡se cambio la contraseña exitosamente!')
         }else{
             console.log(typeof res, res.error)
             alert('algo salio mal')

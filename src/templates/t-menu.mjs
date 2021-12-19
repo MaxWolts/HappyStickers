@@ -59,11 +59,11 @@ const createButtonsMenu = () => {
     let aux = document.createElement('div')
     
     if (!document.cookie || document.cookie == 'token=undefined') {
-        aux.innerHTML = `<button class="login-button" role='link' onclick="window.location='../../login.html'">Logearme</button>
+        aux.innerHTML = `<button class="login-button" role='link' onclick="window.location='./login.html'">Logearme</button>
         `
     }else {
         const accountButton = document.createElement('div')
-        accountButton.innerHTML = `<button class="account-button" role='link' onclick="window.location='../../my-account.html'">Mi cuenta</button>
+        accountButton.innerHTML = `<button class="account-button" role='link' onclick="window.location='./my-account.html'">Mi cuenta</button>
         `
         buttonsContainer.appendChild(accountButton.firstElementChild)
         aux.appendChild(createElement({
