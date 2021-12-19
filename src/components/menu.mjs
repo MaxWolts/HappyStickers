@@ -17,7 +17,6 @@ export const listenerButtonCategory = () => {
             }
             if(elementTarget.className == 'unlogin-button') {
                 document.cookie = "token=; max-age=0";
-                console.log('cookie eliminada')
                 window.location.reload();
             }
         }
@@ -51,7 +50,12 @@ export function listenerSearchByName () {
                         menu.click()
                     }, 400);
                 }else {
-                    window.alert('No se encontro resultado')
+                    Swal.fire({
+                        icon: 'error',
+                        title: "No se encontraron resultados",
+                        confirmButtonColor:' #f73455',
+                        confirmButtonAriaLabel: 'confirmar',
+                      })
                 }
             })
         }

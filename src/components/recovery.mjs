@@ -6,7 +6,11 @@ document.addEventListener('submit', (event) => {
     recoveryPassword({
         email: data.get('email')
     }).then(res => {
-        console.log(res)
-        alert('Se envio un mensaje de recuperacion a tu correo!')
+        Swal.fire({
+            icon: 'success',
+            title: "Se envio un mensaje de recuperación de contraseña a tu correo",
+            confirmButtonColor:' #f73455',
+            confirmButtonAriaLabel: 'confirmar',
+          })
     })
 })

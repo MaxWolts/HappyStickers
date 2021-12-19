@@ -19,7 +19,13 @@ document.addEventListener('submit', (event) => {
         data = new FormData($formSignUp)
         console.log(data.get('password') , data.get('repeat-password'))
         if (data.get('password') !== data.get('repeat-password')) {
-            alert('Los password no coinsiden')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Las contraseñas no coinciden',
+                confirmButtonColor:' #f73455',
+                confirmButtonAriaLabel: 'confirmar',
+              })
         }else {
             objData = {
                 name: data.get('name'),
@@ -120,7 +126,13 @@ function runLogin (objData) {
                 window.location.href = "./payment.html";
             }
         }else{
-            alert('Datos incorrectos', res.error)
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Datos incorrectos',
+                confirmButtonColor:' #f73455',
+                confirmButtonAriaLabel: 'confirmar',
+              })
         }
     })
 }
@@ -128,7 +140,12 @@ function runLogin (objData) {
 function runSignUp (objData) {
     singUp(objData).then(res => {    
         if(res && !res.error) {
-            alert('Cuenta creada')
+            Swal.fire({
+                icon: 'success',
+                text: 'Cuenta Creada',
+                confirmButtonColor:' #f73455',
+                confirmButtonAriaLabel: 'confirmar',
+              })
             setTimeout(() => {
                 login({
                     email: objData.user.email,
@@ -142,13 +159,25 @@ function runSignUp (objData) {
                             window.location.href = "./payment.html";
                         }
                     }else{
-                        alert('Datos incorrectos', res.error)
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Datos incorrectos',
+                            confirmButtonColor:' #f73455',
+                            confirmButtonAriaLabel: 'confirmar',
+                          })
                     }
                 })
-            }, 3000);
+            }, 2000);
         }else{
             console.log(typeof res, res.error)
-            alert('algo salio mal')
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Algo saliomal',
+                confirmButtonColor:' #f73455',
+                confirmButtonAriaLabel: 'confirmar',
+              })
         }
     })
 }

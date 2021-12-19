@@ -34,3 +34,10 @@ footer p {
     text-align: center;
     color: var(--gray-m);
 }
+.swal2-popup {
+    font-size: 1.8rem;
+}
+/* .swal2-confirm, .swal2-styled{
+    background-color: white;
+    border: 3px solid var(--primary-h);
+} */

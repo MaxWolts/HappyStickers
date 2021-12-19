@@ -15,15 +15,27 @@ document.addEventListener('submit', (event) => {
         token: token,
         newPassword: data.get('password')
     }
-    console.log(typeof body.token)
-    console.log(typeof body.newPassword)
-    runRecovery(body)
+    if(data.get('password') !== data.get('r-password')) {
+        Swal.fire({
+            icon: 'error',
+            title: "Las contraseñas no coinciden",
+            confirmButtonColor:' #f73455',
+            confirmButtonAriaLabel: 'confirmar',
+        })
+    }else {
+        runRecovery(body)
+    }
 })
 const runRecovery = (body) => {
     changePassword(body).then(res => {    
         if(res && !res.error) {
-            console.log(typeof res, res)
-            alert('¡se cambio la contraseña exitosamente!')
+            Swal.fire({
+                icon: 'success',
+                title: "Se cambio la contraseña con exito",
+                confirmButtonColor:' #f73455',
+                confirmButtonAriaLabel: 'confirmar',
+              })
+
         }else{
             console.log(typeof res, res.error)
             alert('algo salio mal')

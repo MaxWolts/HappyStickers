@@ -25,9 +25,17 @@ document.addEventListener('submit', async (event) => {
             }
         })
         if (flag > 0) {
-            alert('Se realizo el pedido con exito')
-            localStorage.removeItem('infoCart')
-            window.location.href = "./";
+            Swal.fire({
+                icon: 'success',
+                title: "¡Se realizo el pedido con exito!",
+                text: 'Se te redireccionara en breve',
+                confirmButtonColor:' #f73455',
+                confirmButtonAriaLabel: 'confirmar',
+              })
+            setTimeout(() => {
+                localStorage.removeItem('infoCart')
+                window.location.href = "./";
+            }, 4000);
         }
     }
 })
