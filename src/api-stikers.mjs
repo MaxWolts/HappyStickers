@@ -1,4 +1,4 @@
-const link = 'https://happystiker.herokuapp.com/api/v1'
+const link = 'https://happystickers.herokuapp.com/api/v1'
 
 export const getStikers = async (limit, offset, categoryId) => {
     let params = ''
