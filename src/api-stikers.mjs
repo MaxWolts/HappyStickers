@@ -73,7 +73,7 @@ export const singUp = async (obj) => {
 
 }
 export const createOrder = async () => {
-    let url = `${link}/orders/1`
+    let url = `${link}/orders`
     let bearer = document.cookie.split('=')[1]
     let token = 'Bearer ' + bearer
     let header = new Headers()
@@ -98,11 +98,12 @@ export const addItemsToOrder = async (obj) => {
     header.append('Content-Type', 'application/json')
     header.append('Authorization', `${token}`)
     try {
+        console.log(obj)
         const response = await fetch(url, {
             method: 'POST',
+            body: JSON.stringify(obj),
             mode: 'cors',
             headers: header,
-            body: JSON.stringify(obj),
         })
         const data = await response.json()
         return data

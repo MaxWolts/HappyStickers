@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Ruthie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style/style.css">
     <link rel="stylesheet" href="./src/style/payment.css">
     <title>payment</title>
 </head>
+<script>
+    // if (!document.cookie || document.cookie == 'token=undefined') {
+    //     window.location.href = "./login.html"  
+    // }
+</script>
 <body>
     <header class="header"><a href="./index.html">HappyStikers</a></header>
     <div class="details">
@@ -16,7 +24,7 @@
         <form action="" class="payment-form">
             <div>
                 <p>Nombre</p>
-                <input type="text" name="name">
+                <input type="text" name="name" required="required">
             </div>
             <div>
                 <p>Apellido</p>
@@ -28,19 +36,19 @@
             </div>
             <div>
                 <p>Pais</p>
-                <input type="text" name="country">
+                <input type="text" name="country" >
             </div>
             <div>
                 <p>Código postal</p>
-                <input type="number" name="postalCode">
+                <input type="number" name="postalCode" >
             </div>
             <div>
                 <p>Ciudad / localidad</p>
-                <input type="text" name="city">
+                <input type="text" name="city" >
             </div>
             <div>
                 <p>Calle</p>
-                <input type="text" name="street">
+                <input type="text" name="street" >
             </div>
             <div>
                 <p>Telefono</p>

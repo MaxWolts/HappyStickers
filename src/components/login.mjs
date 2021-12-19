@@ -118,11 +118,11 @@ function runLogin (objData) {
         console.log(typeof res, res)
         if(res && !res.error) {
             document.cookie = `token=${res.token}`
-            // if (!localStorage.getItem('infoCart')) {
-            //     window.location.href = "http://172.19.199.247:5500/index.html";
-            // } else {
-            //     window.location.href = "http://172.19.199.247:5500/payment.html";
-            // }
+            if (!localStorage.getItem('infoCart')) {
+                window.location.href = "../../index.html";
+            } else {
+                window.location.href = "../../payment.html";
+            }
         }else{
             alert('Datos incorrectos', res.error)
         }
@@ -132,8 +132,24 @@ function runLogin (objData) {
 function runSignUp (objData) {
     singUp(objData).then(res => {    
         if(res && !res.error) {
-            console.log(typeof res, res)
-            alert('cuenta creada')
+            alert('Cuenta creada')
+            setTimeout(() => {
+                login({
+                    email: objData.user.email,
+                    password: objData.user.password
+                }).then( res => {
+                    if(res && !res.error) {
+                        document.cookie = `token=${res.token}`
+                        if (!localStorage.getItem('infoCart')) {
+                            window.location.href = "../../index.html";
+                        } else {
+                            window.location.href = "../../payment.html";
+                        }
+                    }else{
+                        alert('Datos incorrectos', res.error)
+                    }
+                })
+            }, 3000);
         }else{
             console.log(typeof res, res.error)
             alert('algo salio mal')

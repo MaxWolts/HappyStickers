@@ -11,6 +11,10 @@
     font-size: 2.5rem;
     color: var(--white);
 }
+.header a {
+    color: var(--white);
+    text-decoration: none;
+}
 .details {
     display: flex;
     flex-direction: column;
