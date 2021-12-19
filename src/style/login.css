@@ -3,6 +3,7 @@ body {
     display: grid;
     justify-items: center;
     min-height: 100vh;
+    padding-bottom: 4rem;
     background: rgb(255,171,76);
     background: linear-gradient(0deg, rgba(255,171,76,1) 0%, rgba(255,95,126,1) 76%);
 }
