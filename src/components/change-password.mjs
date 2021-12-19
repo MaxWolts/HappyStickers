@@ -6,13 +6,17 @@ let token = ''
 for (let p of searchParams) {
     token = p[1];
 }
+const $form = document.querySelector('.change-password')
 document.addEventListener('submit', (event) => {
     event.preventDefault()
-    const data = new FormData(event)
+    const data = new FormData($form)
+    console.log(token)
     const body = {
         token: token,
         newPassword: data.get('password')
     }
+    console.log(typeof body.token)
+    console.log(typeof body.newPassword)
     runRecovery(body)
 })
 const runRecovery = (body) => {

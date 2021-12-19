@@ -116,7 +116,7 @@ export const recoveryPassword = async (body) => {
     try {
         const response = await fetch(url, {
             method: 'POST',
-            body: JSON.stringify(obj),
+            body: JSON.stringify(body),
             mode: 'cors',
             headers:{
                 'Content-Type': 'application/json'
@@ -139,6 +139,7 @@ export const changePassword = async (obj) => {
                 'Content-Type': 'application/json'
             }
         })
+        console.log(response)
         const data = await response.json()
         return data
     }catch (err) {

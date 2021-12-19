@@ -15,6 +15,14 @@ export const listenerButtonCategory = () => {
             if (categoryId) {
                 actionCategory(categoryId)
             }
+            if(elementTarget.className == 'login-unlogin-button') {
+                console.log('salir')
+                document.cookie = "token=; max-age=0";
+                console.log('cookie eliminada')
+                setTimeout(() => {
+                    window.location.reload();
+                }, 2000);
+            }
         }
     })
 }

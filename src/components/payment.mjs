@@ -20,7 +20,6 @@ document.addEventListener('submit', (event) => {
                 }
                 console.log(item)
                 await addItemsToOrder(item).then (res => {
-    
                     console.log(res)
                 })
             }
