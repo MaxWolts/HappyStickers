@@ -62,12 +62,10 @@ const createButtonsMenu = () => {
         aux.innerHTML = `<button class="login-unlogin-button" role='link' onclick="window.location='../../login.html'">Logearme</button>
         `
     }else {
-        const accountButton = createElement({
-            typeElement: 'BUTTON',
-            className: 'account-button',
-            content: 'Mi cuenta'
-        })
-        buttonsContainer.appendChild(accountButton)
+        const accountButton = document.createElement('div')
+        accountButton.innerHTML = `<button class="account-button" role='link' onclick="window.location='../../my-account.html'">Mi cuenta</button>
+        `
+        buttonsContainer.appendChild(accountButton.firstElementChild)
         aux.appendChild(createElement({
             typeElement: 'BUTTON',
             className: 'login-unlogin-button',

@@ -12,12 +12,15 @@
     <title>payment</title>
 </head>
 <script>
-    // if (!document.cookie || document.cookie == 'token=undefined') {
-    //     window.location.href = "./login.html"  
-    // }
+    if (!document.cookie || document.cookie == 'token=undefined') {
+        window.location.href = "./login.html" 
+    }
+    if (!localStorage.getItem('infoCart')) {
+        window.location.href = "./index.html"
+    }
 </script>
 <body>
-    <header class="header"><a href="./index.html">HappyStikers</a></header>
+    <header class="header"><a href="./index.html"><h1>HappyStikers</h1></a></header>
     <div class="details">
         <h2>Detalles de factuación y envio</h2>
         <div class="your-cart"></div>

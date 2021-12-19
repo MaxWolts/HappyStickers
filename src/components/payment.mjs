@@ -5,6 +5,7 @@ let yourCart = document.querySelector('.your-cart')
 createItemTotal(yourCart)
 
 document.addEventListener('submit', (event) => {
+    let flag = 0
     event.preventDefault()
     if (event.target) {
         createOrder().then( async res => {
@@ -20,9 +21,14 @@ document.addEventListener('submit', (event) => {
                 }
                 console.log(item)
                 await addItemsToOrder(item).then (res => {
-                    console.log(res)
+                    if(!res.error) {
+                        flag++
+                    }
                 })
             }
         })
+    }
+    if (flag > 0) {
+        localStorage.removeItem('infoCart')
     }
 })

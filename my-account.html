@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Ruthie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style/style.css">
+    <link rel="stylesheet" href="./src/style/my-account.css">
+    <title>My account</title>
+</head>
+<script>
+    if (!document.cookie || document.cookie == 'token=undefined') {
+        window.location.href = "./login.html" 
+    }
+</script>
+<body>
+    <header class="header"><a href="./index.html"><h1>HappyStikers</h1></a></header>
+    <h2 class="section-title">Mis pedidos:</h2>
+    <section class="my-orders">
+        <div class="order">
+            <div class="order-first-data">
+                <div class="date">
+                    <span>Dia:</span>
+                    <span>2021-12-19</span>
+                </div>
+                <span>X10</span>
+                <div class="total">
+                    <span>Total:</span>
+                    <span>$100</span>
+                </div>
+            </div>
+            <div class="order-items">
+                <div class="item">
+                    <span>SpiderMan x2</span>
+                    <span>x20</span>
+                    <span>$20</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./src/components/my-account.mjs" type="module"></script>
+</html>

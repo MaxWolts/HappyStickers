@@ -8,11 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Ruthie&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/style/style.css">
-    <link rel="stylesheet" href="./src/style/remember.css">
+    <link rel="stylesheet" href="./src/style/recovery.css">
     <title>Recovery</title>
 </head>
+<script>
+    if (document.cookie || !document.cookie == 'token=undefined') {
+        window.location.href = "./index.html" 
+    }
+</script>
 <body>
-    <h1 class="hero-title"><a href="./index.html">HappyStikers</a></h1>
+    <header>
+        <h1 class="hero-title"><a href="./index.html">HappyStikers</a></h1>
+    </header>
     <section class="remember-my-password-container">
         <h3>Recuperar contraseña</h3>
         <form class="remember-my-password"action="">

@@ -146,3 +146,21 @@ export const changePassword = async (obj) => {
         return err
     }
 }
+export const getMyOrders = async () => {
+    let url = `${link}/profile/my-orders`
+    let bearer = document.cookie.split('=')[1]
+    let token = 'Bearer ' + bearer
+    let header = new Headers()
+    header.append('Authorization', `${token}`)
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            mode: 'cors',
+            headers: header
+        })
+        const data = await response.json()
+        return data
+    }catch (err) {
+        return err
+    }
+}

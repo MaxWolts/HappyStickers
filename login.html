@@ -11,8 +11,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;600;700&family=Ruthie&display=swap" rel="stylesheet">
     <title>Login</title>
 </head>
+<script>
+    if (document.cookie || !document.cookie == 'token=undefined') {
+        window.location.href = "./index.html" 
+    }
+</script>
 <body>
-    <h1 class="hero-title"><a href="./index.html">HappyStikers</a></h1>
+    <header>
+        <h1 class="hero-title"><a href="./index.html">HappyStikers</a></h1>
+    </header>
     <section class="login-and-sign-up">
         <div class="activator-buttons-container">
             <button class="active-login">Login</button>

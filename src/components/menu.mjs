@@ -19,9 +19,7 @@ export const listenerButtonCategory = () => {
                 console.log('salir')
                 document.cookie = "token=; max-age=0";
                 console.log('cookie eliminada')
-                setTimeout(() => {
-                    window.location.reload();
-                }, 2000);
+                window.location.reload();
             }
         }
     })

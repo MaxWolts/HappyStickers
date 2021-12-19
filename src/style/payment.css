@@ -8,8 +8,10 @@
     height: 6.6rem;
     background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 76%);
     font-weight: bold;
-    font-size: 2.5rem;
     color: var(--white);
+}
+.header h1 {
+    font-size: 3rem;
 }
 .header a {
     color: var(--white);
