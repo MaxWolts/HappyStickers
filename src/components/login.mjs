@@ -137,9 +137,9 @@ function runSignUp (objData) {
                     if(res && !res.error) {
                         document.cookie = `token=${res.token}`
                         if (!localStorage.getItem('infoCart')) {
-                            window.location.href = "../../index.html";
+                            window.location.href = ".";
                         } else {
-                            window.location.href = "../../payment.html";
+                            window.location.href = "./payment.html";
                         }
                     }else{
                         alert('Datos incorrectos', res.error)
