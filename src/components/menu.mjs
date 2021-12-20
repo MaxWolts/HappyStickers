@@ -19,6 +19,10 @@ export const listenerButtonCategory = () => {
                 document.cookie = "token=; max-age=0";
                 window.location.reload();
             }
+            if( elementTarget.className == 'dont-touch') {
+                document.querySelector('.dont-touch-img').style.display = 'block'
+                window.scroll(0, 99999)
+            }
         }
     })
 }

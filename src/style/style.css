@@ -26,8 +26,11 @@ html {
 footer {
     display: grid;
     align-items: center;
-    height: 6rem;
+    justify-content: center;
+    min-height: 6rem;
     background-color: var(--blue-black);
+    padding: 1rem 0;
+    gap: 1rem;
 }
 footer p {
     font-size: 1.8rem;
@@ -37,7 +40,27 @@ footer p {
 .swal2-popup {
     font-size: 1.8rem;
 }
-/* .swal2-confirm, .swal2-styled{
-    background-color: white;
-    border: 3px solid var(--primary-h);
-} */
+.dont-touch {
+    height: 4rem;
+    font-size: 1.8rem;
+    width: 15rem;
+    place-self: center;
+    border-radius: 1rem;
+    background-color: var(--white);
+    border: 2px solid var(--primary-h);
+}
+.dont-touch:hover {
+    cursor: pointer;
+}
+.dont-touch-img {
+    display: none;
+    padding-top: 2rem;
+    text-align: center;
+}
+.dont-touch-img p {
+    padding: 2rem;
+}
+.dont-touch-img a{
+    color: var(--primary-h);
+    font-weight: bold;
+}

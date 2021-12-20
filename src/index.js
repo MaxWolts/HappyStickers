@@ -1,4 +1,4 @@
-import { createItems, formEvent } from './components/items.mjs'
+import { createItems } from './components/items.mjs'
 const $itemContainer = document.querySelector('.items')
 import { insertHeader } from './components/header.mjs'
 insertHeader()
@@ -11,7 +11,7 @@ import { insertTemplateCart } from './components/cart.mjs'
 insertTemplateCart()
 
 
-import { getStikers, login, createOrder, addItemsToOrder } from './api-stikers.mjs'
+import { getStikers } from './api-stikers.mjs'
 
 const loadStikers = async (exito) => {
     await createItems(exito, $itemContainer)
@@ -23,18 +23,3 @@ listenerButtonCategory()
 listenerSearchByName()
 
 
-// formEvent()
-
-/* ------------ */
-// createOrder().then( res => {
-//     console.log(res)
-// })
-
-// let objetito = {
-//     orderId:1,
-//     productId:5,
-//     amount:7
-// }
-// addItemsToOrder(objetito).then(res => {
-//     console.log(res)
-// })
