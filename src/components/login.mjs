@@ -17,7 +17,6 @@ document.addEventListener('submit', (event) => {
         runLogin(objData)
     }else {
         data = new FormData($formSignUp)
-        console.log(data.get('password') , data.get('repeat-password'))
         if (data.get('password') !== data.get('repeat-password')) {
             Swal.fire({
                 icon: 'error',
@@ -117,7 +116,6 @@ function changeDisplay(className, newDisplay) {
 
 function runLogin (objData) {
     login(objData).then((res)=> {
-        console.log(typeof res, res)
         if(res && !res.error) {
             document.cookie = `token=${res.token}`
             if (!localStorage.getItem('infoCart')) {
@@ -170,7 +168,6 @@ function runSignUp (objData) {
                 })
             }, 2000);
         }else{
-            console.log(typeof res, res.error)
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',

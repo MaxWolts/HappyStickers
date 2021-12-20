@@ -5,7 +5,6 @@ getMyOrders().then(res => {
     res.forEach(element => {
         let objOrder = createObjMyOrder(element)
         let orderHtml = createOrder(objOrder)
-        console.log(orderHtml)
         $orders.appendChild(orderHtml)
     });
 })
@@ -25,6 +24,5 @@ const createObjMyOrder = (element) => {
         date: element.createdAt.slice(0,10),
         items: items
     }
-    console.log(typeof obj.date)
     return obj
 }

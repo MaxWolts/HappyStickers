@@ -10,7 +10,6 @@ const $form = document.querySelector('.change-password')
 document.addEventListener('submit', (event) => {
     event.preventDefault()
     const data = new FormData($form)
-    console.log(token)
     const body = {
         token: token,
         newPassword: data.get('password')
@@ -37,7 +36,6 @@ const runRecovery = (body) => {
               })
 
         }else{
-            console.log(typeof res, res.error)
             alert('algo salio mal')
         }
     })
