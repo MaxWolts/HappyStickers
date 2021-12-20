@@ -26,10 +26,6 @@
     overflow: hidden;
     background-color: var(--secondary-m);
 }
-.item-imgContainer img {
-    max-width: 260px;
-    height: 183px;
-}
 .sale-stiker {
     position: absolute;
     left: 0;

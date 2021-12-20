@@ -8,6 +8,11 @@
     height: 6.6rem;
     background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 76%);
 }
+.header a {
+    color: var(--white);
+    text-decoration: none;
+    cursor: pointer;
+}
 .header-hero-name {
     font-size: 2.5rem;
     color: var(--white);

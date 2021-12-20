@@ -31,16 +31,23 @@ let limit = 12
 let offset = 12
 let category = ''
 const loadItems = () => {
-  getStikers(limit, offset, category).then((res) => {
-    if (Object.keys(res).length > 0) {
-      const $container = document.querySelector('.items')
-      createItems(res, $container, category)
-      offset = (offset + 12)
-    }else {
-      offset = 12
-      observerFooter.unobserve($footer)
-    }
-  })
+  if (offset < 48) {
+
+    getStikers(limit, offset, category).then((res) => {
+      if (Object.keys(res).length > 0) {
+        const $container = document.querySelector('.items')
+        createItems(res, $container, category)
+        console.log(offset)
+        offset = (offset + 12)
+      }else {
+        offset = 12
+        observerFooter.unobserve($footer)
+      }
+    })
+  }else {
+    offset = 12
+        observerFooter.unobserve($footer)
+  }
 }
 export const lazyItems = (node, categoryId, disable) => {
   itemsTotal = Object.keys(node).length
