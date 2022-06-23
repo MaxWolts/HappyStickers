@@ -7,7 +7,7 @@ export const insertTemplateMenu = () => {
     createTemplateMenu($menu)
 }
 
-export const listenerButtonCategory = () => {
+const listenerButtonCategory = () => {
     document.body.addEventListener('click', async (event) => {
         const elementTarget = event.target
         if (elementTarget.tagName == 'BUTTON') {
@@ -35,7 +35,7 @@ function actionCategory (id) {
         menu.click()
     })
 }
-export function listenerSearchByName () {
+function listenerSearchByName () {
     let $searchForm = document.querySelector('.search-form')
     $searchForm.addEventListener('submit', (event) => {
         event.preventDefault()
@@ -65,3 +65,5 @@ export function listenerSearchByName () {
         }
     })
 }
+
+export { listenerButtonCategory, listenerSearchByName  }

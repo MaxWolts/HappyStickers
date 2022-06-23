@@ -1,4 +1,4 @@
-export const animationOpacity =  (element) => {
+const animationOpacity =  (element) => {
     if (element.style.opacity == 0) {
         gsap.to(`#${element.id}`, {
             duration:0.4,
@@ -12,7 +12,7 @@ export const animationOpacity =  (element) => {
         })
     }
 }
-export const animationItemheightDown = async (item, newHeight) => {
+const animationItemheightDown = async (item, newHeight) => {
     let element = ''
     let height = ''
     if(typeof item == 'object') {
@@ -30,7 +30,7 @@ export const animationItemheightDown = async (item, newHeight) => {
         duration:0.4
     })
 }
-export const animationItemheightUp = (item, newHeight) => {
+const animationItemheightUp = (item, newHeight) => {
     let element = ''
     let height = ''
     if(typeof item == 'object') {
@@ -151,7 +151,7 @@ const animationLinesMenu = () => {
     return move
 }
 
-export const controlLeftRightAnimations = () => {
+const controlLeftRightAnimations = () => {
     const menuAnimation = animationMenu()
     const cartAnimation = animationCart()
     const linesAnimation = animationLinesMenu()
@@ -192,7 +192,7 @@ export const controlLeftRightAnimations = () => {
 
 }
 
-export const animationAddItem = (className) => {
+const animationAddItem = (className) => {
     let animation = gsap.to(`${className}`, {
         text: 'Añadido!',
         backgroundColor: 'white',
@@ -203,19 +203,19 @@ export const animationAddItem = (className) => {
     return animation
 }
 
-export const offButton = (className) => {
+const offButton = (className) => {
     gsap.to (`.${className}`, {
         backgroundColor: 'var(--primary-m)',
         duration: 0,
     })
 }
-export const onButton = (className) => {
+const onButton = (className) => {
     gsap.to(`.${className}`, {
         backgroundColor: 'var(--white)',
         duration: 0,
     })
 }
-export const loginSingUpOpacity = (className, opacity) => {
+const loginSingUpOpacity = (className, opacity) => {
     if (opacity == '0') {
         gsap.to(`.${className}`, {
             duration:0.4,
@@ -228,3 +228,5 @@ export const loginSingUpOpacity = (className, opacity) => {
         })
     }
 }
+
+export { animationOpacity, animationItemheightDown, animationItemheightUp, controlLeftRightAnimations, animationAddItem, offButton, onButton, loginSingUpOpacity}

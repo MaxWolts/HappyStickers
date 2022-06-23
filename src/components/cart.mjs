@@ -1,6 +1,6 @@
 import { createTemplateCart, createCartItem } from '../templates/t-cart.mjs'
 
-export const insertTemplateCart = () => {
+const insertTemplateCart = () => {
     const $body = document.querySelector('body')
     $body.appendChild(createTemplateCart())
     
@@ -8,7 +8,7 @@ export const insertTemplateCart = () => {
     
 }
 
-export const addItemsToCart = (objInfo) => {
+const addItemsToCart = (objInfo) => {
     let $cartItems = document.querySelector('.cart-articles')
     if($cartItems.children){
         let $flag = document.querySelector('.cart-flag')
@@ -134,3 +134,5 @@ function loadItemsOfStorage() {
         disableButtonCart()
     }
 }
+
+export { insertTemplateCart, addItemsToCart }

@@ -1,4 +1,4 @@
-export const createTemplateCart = () => {
+const createTemplateCart = () => {
     let content = document.createElement('div')
     content.className = 'cart'
 
@@ -46,7 +46,7 @@ export const createTemplateCart = () => {
     return content
 }
 
-export const createCartItem = (objInfo) => {
+const createCartItem = (objInfo) => {
     let item = document.createElement('div')
     item.className= 'article'
     item.dataset.id = objInfo.id
@@ -75,3 +75,5 @@ export const createCartItem = (objInfo) => {
 
     return item
 }
+
+export {createTemplateCart , createCartItem };

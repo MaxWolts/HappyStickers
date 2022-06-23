@@ -13,14 +13,14 @@ const loadImage = (intersectionEntry) => {
   observer.unobserve(imgNode);
 };
 
-export const registerImage = (image) => {
+const registerImage = (image) => {
   observer.observe(image);
 
 };
 
 
 let $footer = document.querySelector('footer')
-export const observerFooter = new IntersectionObserver((entries) => {
+const observerFooter = new IntersectionObserver((entries) => {
   entries.filter(isIntersecting).forEach(loadItems)
 })
 
@@ -46,7 +46,7 @@ const loadItems = () => {
     observerFooter.unobserve($footer)
   }
 }
-export const lazyItems = (node, categoryId, disable) => {
+const lazyItems = (node, categoryId, disable) => {
   itemsTotal = Object.keys(node).length
   if(itemsTotal>0 && !disable) {
     observerFooter.observe($footer)
@@ -57,3 +57,5 @@ export const lazyItems = (node, categoryId, disable) => {
     }
   }
 }
+
+export { registerImage, observerFooter, lazyItems}

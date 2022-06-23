@@ -1,6 +1,6 @@
 const link = 'https://happystickers.herokuapp.com/api/v1'
 
-export const getStikers = async (limit, offset, categoryId) => {
+const getStikers = async (limit, offset, categoryId) => {
     let params = ''
     let cId = ''
     if (limit && offset) {
@@ -20,7 +20,7 @@ export const getStikers = async (limit, offset, categoryId) => {
     }
 }
 
-export const getStikerCategory = async (id) => {
+const getStikerCategory = async (id) => {
     try {
         const response = await fetch(`${link}/categories/${id}`)
         const data = await response.json()
@@ -29,7 +29,7 @@ export const getStikerCategory = async (id) => {
         return error
     }
 }
-export const getStikerByName = async(name) => {
+const getStikerByName = async(name) => {
     try {
         const response = await fetch(`${link}/products/?name=${name}`)
         const data = await response.json()
@@ -38,7 +38,7 @@ export const getStikerByName = async(name) => {
         return error
     }
 }
-export const login = async(obj) => {
+const login = async(obj) => {
     let url = `${link}/auth/login`
     try {
         const response = await fetch(url, {
@@ -55,7 +55,7 @@ export const login = async(obj) => {
     }
 }
 
-export const singUp = async (obj) => {
+const singUp = async (obj) => {
     let url = `${link}/customers`
     try {
         const response = await fetch(url, {
@@ -72,7 +72,7 @@ export const singUp = async (obj) => {
     }  
 
 }
-export const createOrder = async () => {
+const createOrder = async () => {
     let url = `${link}/orders`
     let bearer = document.cookie.split('=')[1]
     let token = 'Bearer ' + bearer
@@ -90,7 +90,7 @@ export const createOrder = async () => {
         return err
     }
 }
-export const addItemsToOrder = async (obj) => {
+const addItemsToOrder = async (obj) => {
     let url = `${link}/orders/add-item`
     let bearer = document.cookie.split('=')[1]
     let token = 'Bearer ' + bearer
@@ -111,7 +111,7 @@ export const addItemsToOrder = async (obj) => {
         return err
     }
 }
-export const recoveryPassword = async (body) => {
+const recoveryPassword = async (body) => {
     const url = `${link}/auth/recovery`
     try {
         const response = await fetch(url, {
@@ -128,7 +128,7 @@ export const recoveryPassword = async (body) => {
         return err
     }
 }
-export const changePassword = async (obj) => {
+const changePassword = async (obj) => {
     const url = `${link}/auth/change-password`
     try {
         const response = await fetch(url, {
@@ -145,7 +145,7 @@ export const changePassword = async (obj) => {
         return err
     }
 }
-export const getMyOrders = async () => {
+const getMyOrders = async () => {
     let url = `${link}/profile/my-orders`
     let bearer = document.cookie.split('=')[1]
     let token = 'Bearer ' + bearer
@@ -163,3 +163,5 @@ export const getMyOrders = async () => {
         return err
     }
 }
+
+export {getStikers, getStikerCategory, getStikerByName, login, singUp, createOrder, addItemsToOrder, recoveryPassword, changePassword, getMyOrders}

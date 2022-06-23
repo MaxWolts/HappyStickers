@@ -1,7 +1,7 @@
 import createTemplateHeader from "../templates/t-header.mjs";
 import { controlLeftRightAnimations } from "../animations.mjs";
 
-export const insertHeader = () => {
+const insertHeader = () => {
     const $header = document.querySelector('.header')
     $header.innerHTML = createTemplateHeader()
     addAnimations()
@@ -19,6 +19,8 @@ function addAnimations() {
     })
 
 }
+
+export { insertHeader }
 
 
 

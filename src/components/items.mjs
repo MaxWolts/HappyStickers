@@ -6,7 +6,7 @@ import { lazyItems } from '../lazy.mjs'
 listenerButton()
 formEvent()
 
-export const createItems = (obj, container, nameCategory, disable) => {
+const createItems = (obj, container, nameCategory, disable) => {
     let flag = 0
     let containerItems = document.createElement('div')
     containerItems.className = 'sub-items'
@@ -75,7 +75,7 @@ function closedItem(elementTarget, $container, $buttonItem, $item) {
     }, 400);
     $buttonItem.disabled = false
 }
-export function formEvent() {
+function formEvent() {
     document.body.addEventListener('submit', (event) => {
         event.preventDefault()
         const target = event.target
@@ -91,7 +91,7 @@ export function formEvent() {
         }
     })
 }
-export const removeAllItems = (container) => {
+const removeAllItems = (container) => {
     while(container.firstElementChild){
         container.firstElementChild.remove()
     }
@@ -110,3 +110,5 @@ function addAnimationAddItem(button) {
         }, 1300);
     }
 }
+
+export {createItems, formEvent, removeAllItems}
