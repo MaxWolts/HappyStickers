@@ -22,6 +22,7 @@ const createItems = (obj, container, nameCategory, disable) => {
             flag = 1
         }
     })
+    container.firstChild.remove()
     container.appendChild(containerItems)
     lazyItems(obj, nameCategory, disable)
 }

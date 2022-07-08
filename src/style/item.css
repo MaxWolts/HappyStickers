@@ -1,3 +1,7 @@
+.items-loading {
+    position: absolute;
+    font-size: 5rem;
+}
 .items {
     display: grid;
     grid-template-columns: repeat(auto-fill, 28rem);
